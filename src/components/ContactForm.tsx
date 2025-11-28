@@ -1,36 +1,70 @@
-import React, { useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Link } from 'react-router-dom';
-
-interface FormData {
-  name: string;
-  email: string;
-  phone: string;
-}
+import React, { useState, useEffect } from "react";
+import { Spinner } from "@/components/ui/spinner";
+import { Button } from "@/components/ui/button";
+import { toast } from "sonner";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { PhoneInput } from "@/components/PhoneInput";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Link, useNavigate } from "react-router-dom";
+import {
+  useContactRepository,
+  type ContactFormData,
+} from "@/repository/contact-repository";
+import { useContactRepositoryProvider } from "@/context/ContactRepositoryContext";
 
 export const ContactForm = () => {
-  const [formData, setFormData] = useState<FormData>({
-    name: '',
-    email: '',
-    phone: '',
+  const [formData, setFormData] = useState<ContactFormData>({
+    name: "",
+    email: "",
+    phone: "",
+    timezone: "",
+    language: "",
   });
+  const navigate = useNavigate();
+  const repository = useContactRepositoryProvider();
+  const { sendContactData, contactResponse } = useContactRepository(repository);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real application, you would send the data to a server here
-    console.log('Form submitted:', formData);
-    alert('Form submitted successfully!');
+    sendContactData(formData);
+  };
+
+  const handlePhoneChange = (value: string) => {
+    setFormData((prev) => ({
+      ...prev,
+      phone: value,
+    }));
+  };
+
+  useEffect(() => {
+    if (!contactResponse) return;
+
+    if (contactResponse.url) {
+      navigate("/start-chat");
+    }
+
+    if (contactResponse.error) {
+      showErrorToast();
+    }
+  }, [contactResponse]);
+
+  const showErrorToast = () => {
+    toast("Error sending contact form");
   };
 
   return (
@@ -38,7 +72,9 @@ export const ContactForm = () => {
       <Card className="w-full max-w-md">
         <CardHeader className="text-center">
           <CardTitle>Contact Information</CardTitle>
-          <CardDescription>Fill in your details and we'll get back to you</CardDescription>
+          <CardDescription>
+            Fill in your details and we'll get back to you
+          </CardDescription>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleSubmit} className="space-y-6">
@@ -70,26 +106,30 @@ export const ContactForm = () => {
 
             <div className="space-y-2">
               <Label htmlFor="phone">Phone Number</Label>
-              <Input
+              <PhoneInput
                 id="phone"
                 name="phone"
-                type="tel"
                 placeholder="Enter your phone number"
                 value={formData.phone}
-                onChange={handleChange}
+                onChange={handlePhoneChange}
                 required
               />
             </div>
 
-            <Button type="submit" className="w-full">
-              Submit Information
+            <Button
+              type="submit"
+              className="w-full"
+              disabled={contactResponse.loading}
+            >
+              {contactResponse.loading ? (
+                <>
+                  <Spinner />
+                  Submit
+                </>
+              ) : (
+                <>Submit</>
+              )}
             </Button>
-
-            <div className="pt-4 text-center">
-              <Button variant="outline" asChild>
-                <Link to="/">Back to Home</Link>
-              </Button>
-            </div>
           </form>
         </CardContent>
       </Card>
