@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { About } from "./components/About";
 import { Cta } from "./components/Cta";
 import { FAQ } from "./components/FAQ";
@@ -14,35 +15,44 @@ import { Services } from "./components/Services";
 import { Sponsors } from "./components/Sponsors";
 import { Team } from "./components/Team";
 import { Testimonials } from "./components/Testimonials";
+import { ContactForm } from './components/ContactForm';
 import ViewsContainer from './components/ViewsContainer/ViewsContainer';
+
+function AppRoutes() {
+  return (
+    <div className="App">
+      <Routes>
+        <Route path="/" element={
+          <>
+            <Navbar />
+            <Hero />
+            <Sponsors />
+            <About />
+            <HowItWorks />
+            <Features />
+            <Services />
+            <Cta />
+            <Testimonials />
+            <Team />
+            <Pricing />
+            <Newsletter />
+            <FAQ />
+            <Footer />
+            <ScrollToTop />
+          </>
+        } />
+        <Route path="/contact" element={<ContactForm />} />
+      </Routes>
+    </div>
+  );
+}
 
 function App() {
   return (
-    <div className="App">
-      <Navbar />
-      <Hero />
-      <Sponsors />
-      <About />
-      <HowItWorks />
-      <Features />
-      <Services />
-      <Cta />
-      <Testimonials />
-      <Team />
-      <Pricing />
-      <Newsletter />
-      <FAQ />
-      <Footer />
-      <ScrollToTop />
-    </div>
+    <Router>
+      <AppRoutes />
+    </Router>
   );
-  // <Hero />
-
-  // return (
-  //   <div className="App">
-  //     <ViewsContainer />
-  //   </div>
-  // );
 }
 
 export default App;

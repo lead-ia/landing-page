@@ -1,4 +1,5 @@
 import { Button } from "./ui/button";
+import { Link } from "react-router-dom";
 
 export const Cta = () => {
   return (
@@ -24,6 +25,9 @@ export const Cta = () => {
         </div>
 
         <div className="space-y-4 lg:col-start-2">
+          <Button asChild className="w-full md:mr-4 md:w-auto">
+            <Link to="/contact">Contact Us</Link>
+          </Button>
           <Button className="w-full md:mr-4 md:w-auto">Request a Demo</Button>
           <Button
             variant="outline"
