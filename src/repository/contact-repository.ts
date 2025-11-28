@@ -4,47 +4,44 @@ export interface ContactFormData {
   name: string;
   email: string;
   phone: string;
-  timezone: string;
   language: string;
 }
 
 export interface ContactRepository {
-  sendContactData(data: ContactFormData): Promise<string>;
+  sendContactData(data: ContactFormData): Promise<boolean>;
 }
 
 interface ContactResponse {
-  url: string  | null;
+  success: boolean | null;
   error: string | null;
   loading: boolean;
 }
-
-
 
 export const contactRepository: ContactRepository = {
   sendContactData: async (data: ContactFormData) => {
     // TODO: implement this
     await new Promise(resolve => setTimeout(resolve, 2000));
     throw new Error('Yooooooooooooooo')
-    return 'https://example.com/success';
+    return true;
   },
 };
 
 export function useContactRepository(repository: ContactRepository) {
-  const [contactResponse, setContactResponse] = useState<ContactResponse>({ loading: false, error: null, url: null });
+  const [contactResponse, setContactResponse] = useState<ContactResponse>({ loading: false, error: null, success: null });
 
   async function sendContactData(data: ContactFormData) {
-    setContactResponse({ loading: true, error: null, url: null });
+    setContactResponse({ loading: true, error: null, success: null });
 
     try {
-      const url = await repository.sendContactData(data);
+      const success = await repository.sendContactData(data);
       setContactResponse({
-        url: url,
+        success: success,
         error: null,
         loading: false,
       });
     } catch (error) {
       setContactResponse({
-        url: null,
+        success: null,
         error: 'Failed to send contact form',
         loading: false,
       });
