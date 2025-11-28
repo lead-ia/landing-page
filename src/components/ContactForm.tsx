@@ -24,7 +24,6 @@ export const ContactForm = () => {
     name: "",
     email: "",
     phone: "",
-    timezone: "",
     language: "",
   });
   const navigate = useNavigate();
@@ -54,7 +53,7 @@ export const ContactForm = () => {
   useEffect(() => {
     if (!contactResponse) return;
 
-    if (contactResponse.url) {
+    if (contactResponse.success) {
       navigate("/start-chat");
     }
 
