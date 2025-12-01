@@ -5,6 +5,7 @@ export interface ContactFormData {
   email: string;
   phone: string;
   language: string;
+  specialty?: string;
 }
 
 export interface ContactRepository {
