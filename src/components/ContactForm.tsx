@@ -12,19 +12,13 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import {
   useContactRepository,
   type ContactFormData,
 } from "@/repository/contact-repository";
 import { useContactRepositoryProvider } from "@/context/ContactRepositoryContext";
+import SelectSpecialtyButton from "./SelectSpecialtyButton";
 
 export const ContactForm = () => {
   const [formData, setFormData] = useState<ContactFormData>({
@@ -34,31 +28,11 @@ export const ContactForm = () => {
     language: "",
     specialty: "",
   });
-  const [otherSpecialty, setOtherSpecialty] = useState<string>("");
-  const [selectedSpecialty, setSelectedSpecialty] = useState<string>("");
-
-  const doctorSpecialties = [
-    "Anesthesiology",
-    "Cardiology",
-    "Dermatology",
-    "Emergency Medicine",
-    "Family Medicine",
-    "Gastroenterology",
-    "Internal Medicine",
-    "Neurology",
-    "Obstetrics and Gynecology",
-    "Oncology",
-    "Orthopedic Surgery",
-    "Pediatrics",
-    "Psychiatry",
-    "Radiology",
-    "Surgery",
-    "Other"
-  ];
 
   const navigate = useNavigate();
   const repository = useContactRepositoryProvider();
   const { sendContactData, contactResponse } = useContactRepository(repository);
+  const [selectingOtherSpecialty, setSelectingOtherSpecialty] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -71,16 +45,7 @@ export const ContactForm = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    // If the selected specialty is "Other", use the otherSpecialty value
-    let updatedFormData = { ...formData };
-    if (selectedSpecialty === "Other") {
-      updatedFormData = {
-        ...formData,
-        specialty: otherSpecialty,
-      };
-    }
-
-    sendContactData(updatedFormData);
+    sendContactData(formData);
   };
 
   const handlePhoneChange = (value: string) => {
@@ -90,33 +55,15 @@ export const ContactForm = () => {
     }));
   };
 
-  const handleSpecialtyChange = (value: string) => {
-    setSelectedSpecialty(value);
-    if (value === "Other") {
-      // When "Other" is selected, we'll set the specialty when the form is submitted
-      setFormData((prev) => ({
-        ...prev,
-        specialty: undefined, // Will be set to the otherSpecialty value on submit
-      }));
-    } else {
-      setFormData((prev) => ({
-        ...prev,
-        specialty: value,
-      }));
-      setOtherSpecialty(""); // Clear the other specialty field when not "Other"
-    }
+  const handleSpecialtyChange = (specialty: string) => {
+    setFormData((prev) => ({
+      ...prev,
+      specialty: specialty,
+    }));
   };
 
-  const handleOtherSpecialtyChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-    setOtherSpecialty(value);
-    // Update the specialty only when it's "Other", otherwise leave the selected specialty
-    if (selectedSpecialty === "Other") {
-      setFormData((prev) => ({
-        ...prev,
-        specialty: value,
-      }));
-    }
+  const onSelectOtherSpecialty = (selectingOther: boolean) => {
+    setSelectingOtherSpecialty(selectingOther);
   };
 
   useEffect(() => {
@@ -184,36 +131,12 @@ export const ContactForm = () => {
               />
             </div>
 
-            <div className="space-y-2">
-              <Label htmlFor="specialty">Doctor Specialty</Label>
-              <Select value={selectedSpecialty} onValueChange={handleSpecialtyChange}>
-                <SelectTrigger id="specialty">
-                  <SelectValue placeholder="Select your specialty" />
-                </SelectTrigger>
-                <SelectContent>
-                  {doctorSpecialties.map((specialty) => (
-                    <SelectItem key={specialty} value={specialty}>
-                      {specialty}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-            </div>
-
-            {selectedSpecialty === "Other" && (
-              <div className="space-y-2">
-                <Label htmlFor="otherSpecialty">Specify Your Specialty</Label>
-                <Input
-                  id="otherSpecialty"
-                  name="otherSpecialty"
-                  type="text"
-                  placeholder="Enter your specialty"
-                  value={otherSpecialty}
-                  onChange={handleOtherSpecialtyChange}
-                  required
-                />
-              </div>
-            )}
+            <SelectSpecialtyButton
+              contactFormData={formData}
+              selectingOtherSpecialty={selectingOtherSpecialty}
+              onSelectOtherSpecialty={onSelectOtherSpecialty}
+              onSpecialtyChange={handleSpecialtyChange}
+            />
 
             <Button
               type="submit"
