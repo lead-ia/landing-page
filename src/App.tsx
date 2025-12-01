@@ -21,6 +21,7 @@ import { StartChat } from "./components/StartChat";
 import { ContactRepositoryProvider } from "./context/ContactRepositoryContext";
 import ViewsContainer from "./components/ViewsContainer/ViewsContainer";
 import { LeadIALanding } from "./components/home/LeadIALanding";
+import { LanguageProvider } from "./context/LanguageContext";
 
 function AppRoutes() {
   return (
@@ -65,9 +66,11 @@ function AppRoutes() {
 
 function App() {
   return (
-    <Router>
-      <AppRoutes />
-    </Router>
+    <LanguageProvider>
+      <Router>
+        <AppRoutes />
+      </Router>
+    </LanguageProvider>
   );
 }
 
