@@ -1,6 +1,9 @@
 import React from "react";
+import { useTranslations, TranslationKeys } from "@/context/LanguageContext";
 
 export function LandingFooter() {
+    const { forKey } = useTranslations();
+
     return (
         <footer className="bg-slate-900 text-slate-400 py-12">
             <div className="container mx-auto px-4">
@@ -10,31 +13,31 @@ export function LandingFooter() {
                             <span className="text-2xl font-bold text-white">LeadIA</span>
                         </div>
                         <p className="max-w-xs">
-                            The smart, humanized AI secretary designed for modern healthcare professionals.
+                            {forKey(TranslationKeys.footer_desc)}
                         </p>
                     </div>
                     <div>
-                        <h4 className="text-white font-semibold mb-4">Product</h4>
+                        <h4 className="text-white font-semibold mb-4">{forKey(TranslationKeys.footer_product)}</h4>
                         <ul className="space-y-2">
-                            <li><a href="#" className="hover:text-white transition-colors">Features</a></li>
-                            <li><a href="#" className="hover:text-white transition-colors">Pricing</a></li>
-                            <li><a href="#" className="hover:text-white transition-colors">Security</a></li>
+                            <li><a href="#" className="hover:text-white transition-colors">{forKey(TranslationKeys.footer_features)}</a></li>
+                            <li><a href="#" className="hover:text-white transition-colors">{forKey(TranslationKeys.footer_pricing)}</a></li>
+                            <li><a href="#" className="hover:text-white transition-colors">{forKey(TranslationKeys.footer_security)}</a></li>
                         </ul>
                     </div>
                     <div>
-                        <h4 className="text-white font-semibold mb-4">Company</h4>
+                        <h4 className="text-white font-semibold mb-4">{forKey(TranslationKeys.footer_company)}</h4>
                         <ul className="space-y-2">
-                            <li><a href="#" className="hover:text-white transition-colors">About Us</a></li>
-                            <li><a href="#" className="hover:text-white transition-colors">Contact</a></li>
-                            <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
+                            <li><a href="#" className="hover:text-white transition-colors">{forKey(TranslationKeys.footer_about)}</a></li>
+                            <li><a href="#" className="hover:text-white transition-colors">{forKey(TranslationKeys.footer_contact)}</a></li>
+                            <li><a href="#" className="hover:text-white transition-colors">{forKey(TranslationKeys.footer_privacy)}</a></li>
                         </ul>
                     </div>
                 </div>
                 <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm">
-                    <p>&copy; {new Date().getFullYear()} LeadIA. All rights reserved.</p>
+                    <p>&copy; {new Date().getFullYear()} LeadIA. {forKey(TranslationKeys.footer_rights)}</p>
                     <div className="flex gap-4 mt-4 md:mt-0">
-                        <a href="#" className="hover:text-white">Terms</a>
-                        <a href="#" className="hover:text-white">Privacy</a>
+                        <a href="#" className="hover:text-white">{forKey(TranslationKeys.footer_terms)}</a>
+                        <a href="#" className="hover:text-white">{forKey(TranslationKeys.footer_privacy)}</a>
                     </div>
                 </div>
             </div>

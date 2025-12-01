@@ -1,9 +1,13 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
+import { useTranslations, useCurrentLanguage, TranslationKeys } from "@/context/LanguageContext";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 export function LandingHeader() {
     const navigate = useNavigate();
+    const { forKey } = useTranslations();
+    const { currentLanguage, setLanguage } = useCurrentLanguage();
 
     const handleCtaClick = () => {
         navigate("/contact");
@@ -16,9 +20,20 @@ export function LandingHeader() {
                     <img src="/logo/leadia-logo.png" alt="LeadIA Logo" className="h-8 w-auto object-contain" onError={(e) => { e.currentTarget.style.display = 'none'; e.currentTarget.nextElementSibling?.classList.remove('hidden'); }} />
                     <span className="text-xl font-bold text-slate-900 hidden">LeadIA</span>
                 </div>
-                <Button onClick={handleCtaClick}>
-                    Get Started
-                </Button>
+                <div className="flex items-center gap-4">
+                    <Select value={currentLanguage} onValueChange={(val: 'en' | 'pt') => setLanguage(val)}>
+                        <SelectTrigger className="w-[70px] h-9 border-none bg-transparent focus:ring-0">
+                            <SelectValue placeholder="Lang" />
+                        </SelectTrigger>
+                        <SelectContent>
+                            <SelectItem value="en">🇺🇸 EN</SelectItem>
+                            <SelectItem value="pt">🇧🇷 PT</SelectItem>
+                        </SelectContent>
+                    </Select>
+                    <Button onClick={handleCtaClick}>
+                        {forKey(TranslationKeys.header_cta)}
+                    </Button>
+                </div>
             </div>
         </header>
     );

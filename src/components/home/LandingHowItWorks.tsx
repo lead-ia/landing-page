@@ -2,23 +2,26 @@ import React from "react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { BrainCircuit, CalendarCheck, Rocket } from "lucide-react";
+import { useTranslations, TranslationKeys } from "@/context/LanguageContext";
 
 export function LandingHowItWorks() {
+    const { forKey } = useTranslations();
+
     const steps = [
         {
             icon: BrainCircuit,
-            title: "1. Training",
-            description: "We train LeadIA with your POP, agenda, and your unique communication style."
+            title: TranslationKeys.how_step_1_title,
+            description: TranslationKeys.how_step_1_desc
         },
         {
             icon: CalendarCheck,
-            title: "2. Testing",
-            description: "You test LeadIA for 14 days with your own patients to ensure it meets your standards."
+            title: TranslationKeys.how_step_2_title,
+            description: TranslationKeys.how_step_2_desc
         },
         {
             icon: Rocket,
-            title: "3. Activation",
-            description: "We activate it full-time. No installation, no complex configuration, no system change."
+            title: TranslationKeys.how_step_3_title,
+            description: TranslationKeys.how_step_3_desc
         }
     ];
 
@@ -26,12 +29,12 @@ export function LandingHowItWorks() {
         <section className="py-20 bg-slate-50">
             <div className="container mx-auto px-4">
                 <div className="text-center max-w-3xl mx-auto mb-16">
-                    <Badge variant="outline" className="mb-4">How It Works</Badge>
+                    <Badge variant="outline" className="mb-4">{forKey(TranslationKeys.how_badge)}</Badge>
                     <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
-                        Simple, Seamless Integration
+                        {forKey(TranslationKeys.how_title)}
                     </h2>
                     <p className="text-lg text-slate-600">
-                        Get started without disrupting your current workflow.
+                        {forKey(TranslationKeys.how_desc)}
                     </p>
                 </div>
 
@@ -43,9 +46,9 @@ export function LandingHowItWorks() {
                                 <div className="h-16 w-16 rounded-full bg-slate-100 flex items-center justify-center mb-6 text-[#130157]">
                                     <step.icon className="h-8 w-8" />
                                 </div>
-                                <h3 className="text-xl font-bold text-slate-900 mb-4">{step.title}</h3>
+                                <h3 className="text-xl font-bold text-slate-900 mb-4">{forKey(step.title)}</h3>
                                 <p className="text-slate-600 leading-relaxed">
-                                    {step.description}
+                                    {forKey(step.description)}
                                 </p>
                             </CardContent>
                         </Card>

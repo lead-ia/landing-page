@@ -2,13 +2,16 @@ import React from "react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Check, Sparkles, Clock, ShieldCheck, UserPlus } from "lucide-react";
+import { useTranslations, TranslationKeys } from "@/context/LanguageContext";
 
 export function LandingOffer() {
+    const { forKey } = useTranslations();
+
     const benefits = [
-        { icon: Sparkles, text: "Prior access to LeadIA" },
-        { icon: Check, text: "30% OFF in the first 3 months" },
-        { icon: UserPlus, text: "Premium and personalized onboarding" },
-        { icon: ShieldCheck, text: "Priority support for the next 90 days" },
+        { icon: Sparkles, text: TranslationKeys.offer_benefit_1 },
+        { icon: Check, text: TranslationKeys.offer_benefit_2 },
+        { icon: UserPlus, text: TranslationKeys.offer_benefit_3 },
+        { icon: ShieldCheck, text: TranslationKeys.offer_benefit_4 },
     ];
 
     return (
@@ -20,31 +23,31 @@ export function LandingOffer() {
                         <div className="grid md:grid-cols-2">
                             <div className="p-8 md:p-12 bg-[#130157] text-white flex flex-col justify-center">
                                 <Badge className="w-fit mb-6 bg-primary text-primary-foreground hover:bg-primary/90 border-none">
-                                    Exclusive Pre-launch Offer
+                                    {forKey(TranslationKeys.offer_badge)}
                                 </Badge>
                                 <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                                    Join the Waiting List
+                                    {forKey(TranslationKeys.offer_title)}
                                 </h2>
                                 <p className="text-blue-100 mb-8 text-lg">
-                                    Secure your spot today and unlock exclusive benefits for early adopters.
+                                    {forKey(TranslationKeys.offer_desc)}
                                 </p>
                                 <div className="flex items-center gap-3 text-sm bg-white/10 p-4 rounded-lg border border-white/10">
                                     <Clock className="h-5 w-5 text-primary shrink-0" />
                                     <p>
-                                        <span className="font-semibold text-white">Limited Seats:</span> We have limited capacity for this pre-launch phase.
+                                        <span className="font-semibold text-white">{forKey(TranslationKeys.offer_limited)}</span> {forKey(TranslationKeys.offer_limited_desc)}
                                     </p>
                                 </div>
                             </div>
 
                             <CardContent className="p-8 md:p-12 flex flex-col justify-center">
-                                <h3 className="text-xl font-bold text-slate-900 mb-6">What you'll get:</h3>
+                                <h3 className="text-xl font-bold text-slate-900 mb-6">{forKey(TranslationKeys.offer_list_title)}</h3>
                                 <ul className="space-y-4">
                                     {benefits.map((benefit, index) => (
                                         <li key={index} className="flex items-center gap-3">
                                             <div className="h-8 w-8 rounded-full bg-green-100 flex items-center justify-center text-green-600 shrink-0">
                                                 <benefit.icon className="h-4 w-4" />
                                             </div>
-                                            <span className="text-slate-700 font-medium">{benefit.text}</span>
+                                            <span className="text-slate-700 font-medium">{forKey(benefit.text)}</span>
                                         </li>
                                     ))}
                                 </ul>
