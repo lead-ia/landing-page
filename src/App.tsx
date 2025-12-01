@@ -20,6 +20,7 @@ import { ContactForm } from "./components/ContactForm";
 import { StartChat } from "./components/StartChat";
 import { ContactRepositoryProvider } from "./context/ContactRepositoryContext";
 import ViewsContainer from "./components/ViewsContainer/ViewsContainer";
+import { LeadIALanding } from "./components/home/LeadIALanding";
 
 function AppRoutes() {
   return (
@@ -56,6 +57,7 @@ function AppRoutes() {
           }
         />
         <Route path="/start-chat" element={<StartChat />} />
+        <Route path="/landing" element={<LeadIALanding />} />
       </Routes>
     </div>
   );
