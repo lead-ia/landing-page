@@ -45,6 +45,11 @@ export const ContactForm = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
+    if (formData.specialty?.length == 0) {
+      showErrorToast("Please select a specialty");
+      return;
+    }
+
     sendContactData(formData);
   };
 
@@ -78,8 +83,8 @@ export const ContactForm = () => {
     }
   }, [contactResponse]);
 
-  const showErrorToast = () => {
-    toast("Error sending contact form");
+  const showErrorToast = (message?: string) => {
+    toast(message || "Error sending contact form");
   };
 
   return (

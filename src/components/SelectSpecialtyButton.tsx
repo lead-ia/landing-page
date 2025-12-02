@@ -61,6 +61,7 @@ function SelectSpecialtyButton(props: {
               : props.contactFormData.specialty
           }
           onValueChange={handleSpecialtyChange}
+          required
         >
           <SelectTrigger id="specialty" className="w-full">
             <SelectValue placeholder="Select your specialty" />
