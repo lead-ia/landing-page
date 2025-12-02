@@ -20,10 +20,34 @@ interface ContactResponse {
 
 export const contactRepository: ContactRepository = {
   sendContactData: async (data: ContactFormData) => {
-    // TODO: implement this
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    throw new Error('Yooooooooooooooo')
-    return true;
+    try {
+      const response = await fetch('https://workflow.leadia.com.br/webhook/register-lead', {
+        method: 'POST',
+        headers: {
+          'x-app-secret': import.meta.env.VITE_LEADIA_API_SECRET,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          fullname: data.name,
+          phonenumber: data.phone,
+          email: data.email,
+          specialty: data.specialty,
+        }),
+      });
+
+      const result = await response.json();
+
+      console.log(result);
+
+      if (result.status === 'success') {
+        return true;
+      } else {
+        throw new Error(result.message || 'Failed to register lead');
+      }
+    } catch (error) {
+      console.error('Error sending contact data:', error);
+      throw error;
+    }
   },
 };
 
