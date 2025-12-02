@@ -41,9 +41,9 @@ export function LandingHowItWorks() {
                 <div className="grid md:grid-cols-3 gap-8">
                     {steps.map((step, index) => (
                         <Card key={index} className="border-slate-200 bg-white shadow-lg relative overflow-hidden">
-                            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-[#130157]"></div>
+                            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#91ebfb] to-primary"></div>
                             <CardContent className="p-8 flex flex-col items-center text-center h-full">
-                                <div className="h-16 w-16 rounded-full bg-slate-100 flex items-center justify-center mb-6 text-[#130157]">
+                                <div className="h-16 w-16 rounded-full bg-slate-100 flex items-center justify-center mb-6 text-primary">
                                     <step.icon className="h-8 w-8" />
                                 </div>
                                 <h3 className="text-xl font-bold text-slate-900 mb-4">{forKey(step.title)}</h3>

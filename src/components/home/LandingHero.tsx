@@ -20,7 +20,7 @@ export function LandingHero() {
                 <div className="text-center max-w-3xl mx-auto mb-12">
                     <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900 mb-6 leading-tight">
                         {forKey(TranslationKeys.hero_title_1)} <br className="hidden md:block" />
-                        <span className="bg-gradient-to-r from-primary to-[#130157] text-transparent bg-clip-text">{forKey(TranslationKeys.hero_title_2)}</span>
+                        <span className="bg-gradient-to-r bg-clip-text text-transparent from-[#91ebfb] to-primary">{forKey(TranslationKeys.hero_title_2)}</span>
                     </h1>
                     <p className="text-lg md:text-xl text-slate-600 mb-8 leading-relaxed">
                         {forKey(TranslationKeys.hero_description)}
@@ -29,9 +29,6 @@ export function LandingHero() {
                         <Button size="lg" onClick={handleCtaClick} className="w-full sm:w-auto">
                             {forKey(TranslationKeys.hero_cta_primary)}
                             <ArrowRight className="ml-2 h-5 w-5" />
-                        </Button>
-                        <Button size="lg" variant="outline" onClick={handleCtaClick} className="w-full sm:w-auto">
-                            {forKey(TranslationKeys.hero_cta_secondary)}
                         </Button>
                     </div>
                 </div>

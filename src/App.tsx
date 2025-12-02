@@ -24,28 +24,7 @@ function AppRoutes() {
   return (
     <div className="App">
       <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              <Navbar />
-              <Hero />
-              <Sponsors />
-              <About />
-              <HowItWorks />
-              <Features />
-              <Services />
-              <Cta />
-              <Testimonials />
-              <Team />
-              <Pricing />
-              <Newsletter />
-              <FAQ />
-              <Footer />
-              <ScrollToTop />
-            </>
-          }
-        />
+        <Route path="/" element={<LeadIALanding />} />
         <Route
           path="/contact"
           element={
@@ -55,7 +34,6 @@ function AppRoutes() {
           }
         />
         <Route path="/start-chat" element={<StartChat />} />
-        <Route path="/landing" element={<LeadIALanding />} />
       </Routes>
     </div>
   );

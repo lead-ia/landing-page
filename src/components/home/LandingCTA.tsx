@@ -13,8 +13,8 @@ export function LandingCTA() {
     };
 
     return (
-        <section className="py-20 bg-background text-primary-foreground">
-            <div className="max-w-3xl mx-auto text-center p-6">
+        <section className="py-20 bg-primary/15 text-primary">
+            <div className="max-w-3xl mx-auto text-center p-4 lg:p-0">
                 <h2 className="text-3xl md:text-4xl font-bold mb-6">
                     {forKey(TranslationKeys.cta_title)}
                 </h2>
@@ -29,7 +29,7 @@ export function LandingCTA() {
                 </div>
             </div>
             <div className="text-center">
-                <p className="mt-8 text-primary-foreground/60 text-sm">
+                <p className="mt-8 text-foreground/60 text-sm">
                     {forKey(TranslationKeys.cta_disclaimer)}
                 </p>
             </div>

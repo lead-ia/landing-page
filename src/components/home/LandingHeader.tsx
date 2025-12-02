@@ -9,10 +9,6 @@ export function LandingHeader() {
     const { forKey } = useTranslations();
     const { currentLanguage, setLanguage } = useCurrentLanguage();
 
-    const handleCtaClick = () => {
-        navigate("/contact");
-    };
-
     return (
         <header className="sticky top-0 z-50 w-full border-b bg-white/80 backdrop-blur-md supports-[backdrop-filter]:bg-white/60">
             <div className="container mx-auto px-4 h-16 flex items-center justify-between">
@@ -30,9 +26,6 @@ export function LandingHeader() {
                             <SelectItem value="pt">🇧🇷 PT</SelectItem>
                         </SelectContent>
                     </Select>
-                    <Button onClick={handleCtaClick}>
-                        {forKey(TranslationKeys.header_cta)}
-                    </Button>
                 </div>
             </div>
         </header>
