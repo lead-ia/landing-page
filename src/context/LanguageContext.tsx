@@ -10,6 +10,9 @@ export type Language = "en" | "pt";
 export enum TranslationKeys {
   // Header
   header_cta = "header_cta",
+  header_lang_placeholder = "header_lang_placeholder",
+  header_lang_en = "header_lang_en",
+  header_lang_pt = "header_lang_pt",
 
   // Hero
   hero_badge = "hero_badge",
@@ -55,6 +58,7 @@ export enum TranslationKeys {
   solution_trad_2 = "solution_trad_2",
   solution_trad_3 = "solution_trad_3",
   solution_trad_4 = "solution_trad_4",
+  solution_trad_5 = "solution_trad_5",
   solution_leadia_1 = "solution_leadia_1",
   solution_leadia_2 = "solution_leadia_2",
   solution_leadia_3 = "solution_leadia_3",
@@ -71,6 +75,7 @@ export enum TranslationKeys {
   scope_does_desc = "scope_does_desc",
   scope_does_1 = "scope_does_1",
   scope_does_2 = "scope_does_2",
+  scope_does_customizable = "scope_does_customizable",
   scope_does_3 = "scope_does_3",
   scope_does_4 = "scope_does_4",
   scope_does_5 = "scope_does_5",
@@ -147,6 +152,9 @@ const translations: Record<Language, Record<TranslationKeys, string>> = {
   en: {
     // Header
     [TranslationKeys.header_cta]: "Get Started",
+    [TranslationKeys.header_lang_placeholder]: "Lang",
+    [TranslationKeys.header_lang_en]: "🇺🇸 EN",
+    [TranslationKeys.header_lang_pt]: "🇧🇷 PT",
 
     // Hero
     [TranslationKeys.hero_badge]: "Your Smart Secretary",
@@ -202,11 +210,12 @@ const translations: Record<Language, Record<TranslationKeys, string>> = {
     [TranslationKeys.solution_trad_2]: "Replies in minutes/hours",
     [TranslationKeys.solution_trad_3]: "Can miss calls/messages",
     [TranslationKeys.solution_trad_4]: "High monthly salary",
+    [TranslationKeys.solution_trad_5]: "Does not follow up well",
     [TranslationKeys.solution_leadia_1]: "Available 24/7",
     [TranslationKeys.solution_leadia_2]: "Replies in < 5 seconds",
     [TranslationKeys.solution_leadia_3]: "Never misses a patient",
     [TranslationKeys.solution_leadia_4]: "Follows your POP & tone",
-    [TranslationKeys.solution_leadia_5]: "Fraction of the cost",
+    [TranslationKeys.solution_leadia_5]: "Fraction of the cost of a secretary",
     [TranslationKeys.solution_leadia_6]: "WhatsApp Integrated",
 
     // Scope
@@ -220,6 +229,7 @@ const translations: Record<Language, Record<TranslationKeys, string>> = {
       "Comprehensive administrative automation",
     [TranslationKeys.scope_does_1]: "Humanized & Empathetic Triage",
     [TranslationKeys.scope_does_2]: "Context-Aware Conversations",
+    [TranslationKeys.scope_does_customizable]: "Customizable and trainable",
     [TranslationKeys.scope_does_3]: "Structured Initial Screening",
     [TranslationKeys.scope_does_4]: "In-person & Online Scheduling",
     [TranslationKeys.scope_does_5]: "Automated Confirmations",
@@ -309,6 +319,9 @@ const translations: Record<Language, Record<TranslationKeys, string>> = {
   pt: {
     // Header
     [TranslationKeys.header_cta]: "Começar Agora",
+    [TranslationKeys.header_lang_placeholder]: "Lang",
+    [TranslationKeys.header_lang_en]: "🇺🇸 EN",
+    [TranslationKeys.header_lang_pt]: "🇧🇷 PT",
 
     // Hero
     [TranslationKeys.hero_badge]: "Sua Secretária Inteligente",
@@ -366,11 +379,12 @@ const translations: Record<Language, Record<TranslationKeys, string>> = {
     [TranslationKeys.solution_trad_2]: "Responde em minutos/horas",
     [TranslationKeys.solution_trad_3]: "Pode perder chamadas/mensagens",
     [TranslationKeys.solution_trad_4]: "Salário mensal alto",
+    [TranslationKeys.solution_trad_5]: "Não faz um bom follow up",
     [TranslationKeys.solution_leadia_1]: "Disponível 24 horas",
     [TranslationKeys.solution_leadia_2]: "Responde em < 5 segundos",
     [TranslationKeys.solution_leadia_3]: "Nunca perde um paciente",
     [TranslationKeys.solution_leadia_4]: "Segue seu POP e tom",
-    [TranslationKeys.solution_leadia_5]: "Fração do custo",
+    [TranslationKeys.solution_leadia_5]: "Fração do custo de uma secretária",
     [TranslationKeys.solution_leadia_6]: "Integrado ao WhatsApp",
 
     // Scope
@@ -383,6 +397,7 @@ const translations: Record<Language, Record<TranslationKeys, string>> = {
     [TranslationKeys.scope_does_desc]: "Automação administrativa abrangente",
     [TranslationKeys.scope_does_1]: "Triagem humanizada e empática",
     [TranslationKeys.scope_does_2]: "Conversas com contexto",
+    [TranslationKeys.scope_does_customizable]: "Personalizável e treinável",
     [TranslationKeys.scope_does_3]: "Perguntas iniciais padronizadas",
     [TranslationKeys.scope_does_4]: "Agendamento presencial e online",
     [TranslationKeys.scope_does_5]: "Confirmações automatizadas",
