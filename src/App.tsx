@@ -1,7 +1,5 @@
-import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { About } from "./components/About";
-import { Toaster } from "@/components/ui/sonner";
 import { Cta } from "./components/Cta";
 import { FAQ } from "./components/FAQ";
 import { Features } from "./components/Features";
@@ -19,7 +17,6 @@ import { Testimonials } from "./components/Testimonials";
 import { ContactForm } from "./components/ContactForm";
 import { StartChat } from "./components/StartChat";
 import { ContactRepositoryProvider } from "./context/ContactRepositoryContext";
-import ViewsContainer from "./components/ViewsContainer/ViewsContainer";
 import { LeadIALanding } from "./components/home/LeadIALanding";
 import { LanguageProvider } from "./context/LanguageContext";
 
