@@ -1,3 +1,4 @@
+import { useReferral } from '@/context/ReferralContext';
 import { useState } from 'react';
 
 export interface ContactFormData {
@@ -9,7 +10,7 @@ export interface ContactFormData {
 }
 
 export interface ContactRepository {
-  sendContactData(data: ContactFormData): Promise<boolean>;
+  sendContactData(data: ContactFormData, isReferral?: boolean): Promise<boolean>;
 }
 
 interface ContactResponse {
@@ -19,9 +20,16 @@ interface ContactResponse {
 }
 
 export const contactRepository: ContactRepository = {
-  sendContactData: async (data: ContactFormData) => {
+  sendContactData: async (data: ContactFormData, isReferral?: boolean) => {
     try {
-      const response = await fetch('https://workflow.leadia.com.br/webhook/register-lead', {
+      let basePath = 'https://workflow.leadia.com.br/webhook';
+      if (isReferral) {
+        basePath += '/referral';
+      }
+      else {
+        basePath += '/register-lead';
+      }
+      const response = await fetch(basePath, {
         method: 'POST',
         headers: {
           'x-app-secret': import.meta.env.VITE_LEADIA_API_SECRET,
@@ -52,13 +60,14 @@ export const contactRepository: ContactRepository = {
 };
 
 export function useContactRepository(repository: ContactRepository) {
+  const { isReferral } = useReferral();
   const [contactResponse, setContactResponse] = useState<ContactResponse>({ loading: false, error: null, success: null });
 
   async function sendContactData(data: ContactFormData) {
     setContactResponse({ loading: true, error: null, success: null });
 
     try {
-      const success = await repository.sendContactData(data);
+      const success = await repository.sendContactData(data, isReferral);
       setContactResponse({
         success: success,
         error: null,
