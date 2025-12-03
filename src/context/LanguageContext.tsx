@@ -269,7 +269,7 @@ const translations: Record<Language, Record<TranslationKeys, string>> = {
       "We train LeadIA with your POP, agenda, and your unique communication style.",
     [TranslationKeys.how_step_2_title]: "2. Testing",
     [TranslationKeys.how_step_2_desc]:
-      "You test LeadIA for 14 days with your own patients to ensure it meets your standards.",
+      "You test LeadIA for 7 days with your own patients to ensure it meets your standards.",
     [TranslationKeys.how_step_3_title]: "3. Activation",
     [TranslationKeys.how_step_3_desc]:
       "We activate it full-time. No installation, no complex configuration, no system change.",
@@ -456,7 +456,7 @@ const translations: Record<Language, Record<TranslationKeys, string>> = {
       "Treinamos a LeadIA com seu POP, agenda e seu estilo único de comunicação.",
     [TranslationKeys.how_step_2_title]: "2. Teste",
     [TranslationKeys.how_step_2_desc]:
-      "Você testa a LeadIA por 14 dias com seus próprios pacientes para garantir que atenda seus padrões.",
+      "Você testa a LeadIA por 7 dias com seus próprios pacientes para garantir que atenda seus padrões.",
     [TranslationKeys.how_step_3_title]: "3. Ativação",
     [TranslationKeys.how_step_3_desc]:
       "Ativamos em tempo integral. Sem instalação, sem configuração complexa, sem mudança de sistema.",

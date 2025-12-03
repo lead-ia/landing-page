@@ -1,5 +1,5 @@
 import { Badge } from "@/components/ui/badge";
-import { Clock, XCircle, UserCheck, TrendingUp } from "lucide-react";
+import { Clock, XCircle,  TrendingUp } from "lucide-react";
 import { useTranslations, TranslationKeys } from "@/context/LanguageContext";
 
 export function LandingProblem() {

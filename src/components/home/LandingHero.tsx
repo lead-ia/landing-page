@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Clock, MessageCircle, ArrowRight, Calendar, UserCheck, Rocket } from "lucide-react";
+import { Clock, MessageCircle, Calendar, UserCheck, Rocket } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useTranslations, TranslationKeys } from "@/context/LanguageContext";
 
