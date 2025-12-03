@@ -1,4 +1,3 @@
-import React from "react";
 import { useTranslations, TranslationKeys } from "@/context/LanguageContext";
 
 export function LandingFooter() {

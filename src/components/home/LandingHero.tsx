@@ -1,6 +1,4 @@
-import React from "react";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Clock, MessageCircle, ArrowRight, Calendar, UserCheck } from "lucide-react";
 import { useNavigate } from "react-router-dom";
