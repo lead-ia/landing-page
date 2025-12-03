@@ -11,7 +11,7 @@ import { LandingFooter } from "./LandingFooter";
 
 export function LeadIALanding() {
   return (
-    <div className="min-h-screen bg-slate-50 font-sans text-slate-900">
+    <div className="min-h-screen bg-background font-sans text-foreground">
       <LandingHeader />
       <LandingHero />
       <LandingProblem />

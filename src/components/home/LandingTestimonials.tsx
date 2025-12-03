@@ -20,16 +20,16 @@ export function LandingTestimonials() {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-card">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <Badge variant="outline" className="mb-4">
             {forKey(TranslationKeys.testimonials_badge)}
           </Badge>
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
             {forKey(TranslationKeys.testimonials_title)}
           </h2>
-          <p className="text-lg text-slate-600">
+          <p className="text-lg text-muted-foreground">
             {forKey(TranslationKeys.testimonials_desc)}
           </p>
         </div>
@@ -38,13 +38,13 @@ export function LandingTestimonials() {
           {testimonials.map((item, index) => (
             <Card
               key={index}
-              className="border-slate-200 bg-white hover:shadow-md transition-all"
+              className="border-border bg-card hover:shadow-md transition-all"
             >
               <CardContent className="p-8 flex flex-col h-full">
                 <div className="mb-6 text-primary/40">
                   <Quote className="h-10 w-10" />
                 </div>
-                <p className="text-slate-700 mb-6 flex-grow italic leading-relaxed">
+                <p className="text-muted-foreground mb-6 flex-grow italic leading-relaxed">
                   "{forKey(item.text)}"
                 </p>
                 <div className="flex items-center gap-4 mt-auto border-t border-slate-100 pt-4">
@@ -52,7 +52,7 @@ export function LandingTestimonials() {
                     {forKey(item.author).charAt(4)}
                   </div>
                   <div>
-                    <p className="font-bold text-slate-900 text-sm">
+                    <p className="font-bold text-foreground text-sm">
                       {forKey(item.author)}
                     </p>
                     <p className="text-xs text-primary font-medium">

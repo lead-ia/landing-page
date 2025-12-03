@@ -1,24 +1,23 @@
 import { Badge } from "@/components/ui/badge";
-import { Clock, XCircle,  TrendingUp } from "lucide-react";
+import { Clock, XCircle, TrendingUp } from "lucide-react";
 import { useTranslations, TranslationKeys } from "@/context/LanguageContext";
 
 export function LandingProblem() {
   const { forKey } = useTranslations();
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-card">
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
           <div className="lg:w-1/2">
             <div className="relative">
-              <div className="absolute -inset-4 bg-red-100 rounded-full blur-2xl opacity-50"></div>
-              <div className="relative rounded-2xl shadow-2xl w-full h-[400px] lg:h-[500px] bg-slate-300 text-center border border-slate-200 overflow-none">
+              <div className="relative rounded-2xl shadow-2xl w-full h-[400px] lg:h-[500px] text-center overflow-none">
                 <img
                   src="/frust.webp"
                   className="object-cover w-full h-full rounded-2xl"
                 />
               </div>
-              <div className="absolute bottom-6 left-6 right-6 bg-white/30 backdrop-blur-md p-4 rounded-xl shadow-lg border border-white/50">
+              <div className="absolute bottom-6 left-6 right-6 bg-card/30 backdrop-blur-md p-4 rounded-xl shadow-lg border border-border/50">
                 <div className="flex items-start gap-3">
                   <XCircle className="h-6 w-6 text-red-500 shrink-0 mt-1" />
                   <div>
@@ -40,13 +39,13 @@ export function LandingProblem() {
             >
               {forKey(TranslationKeys.problem_badge)}
             </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
               A maioria dos consultórios perde pacientes <br />
               <span className="text-red-500">
                 antes mesmo da primeira consulta
               </span>
             </h2>
-            <p className="text-lg text-primary mb-8">
+            <p className="text-lg text-foreground mb-8">
               {forKey(TranslationKeys.problem_description)}
             </p>
             <div className="space-y-6">
@@ -55,10 +54,10 @@ export function LandingProblem() {
                   <Clock className="h-5 w-5" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-slate-900 text-lg">
+                  <h3 className="font-semibold text-foreground text-lg">
                     {forKey(TranslationKeys.problem_point_1_title)}
                   </h3>
-                  <p className="text-slate-600">
+                  <p className="text-muted-foreground">
                     {forKey(TranslationKeys.problem_point_1_desc)}
                   </p>
                 </div>
@@ -68,16 +67,16 @@ export function LandingProblem() {
                   <TrendingUp className="h-5 w-5" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-slate-900 text-lg">
+                  <h3 className="font-semibold text-foreground text-lg">
                     {forKey(TranslationKeys.problem_point_2_title)}
                   </h3>
-                  <p className="text-slate-600">
+                  <p className="text-muted-foreground">
                     {forKey(TranslationKeys.problem_point_2_desc)}
                   </p>
                 </div>
               </div>
             </div>
-            <div className="mt-8 text-sm text-slate-500 italic">
+            <div className="mt-8 text-sm text-muted-foreground italic">
               {forKey(TranslationKeys.problem_source)}
             </div>
           </div>

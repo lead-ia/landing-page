@@ -38,19 +38,19 @@ export function LandingSolution() {
   ];
 
   return (
-    <section className="py-20 bg-slate-50">
+    <section className="py-20 bg-muted">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <Badge variant="outline" className="mb-4">
             {forKey(TranslationKeys.solution_badge)}
           </Badge>
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
             {forKey(TranslationKeys.solution_title_1)} <br />
             <span className="bg-gradient-to-r bg-clip-text text-transparent from-[#91ebfb] to-primary">
               {forKey(TranslationKeys.solution_title_2)}
             </span>
           </h2>
-          <p className="text-lg text-slate-600">
+          <p className="text-lg text-muted-foreground">
             LeadIA — A secretária que nunca falha. Nunca atrasa. Nunca esquece.
             Ela executa o que uma secretária faria — só que com consistência
             absoluta.E da maneira que você faria: seguindo seu processo padrão,
@@ -79,7 +79,7 @@ export function LandingSolution() {
                 {capabilities.map((item, index) => (
                   <li key={index} className="flex items-start gap-3">
                     <item.icon className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                    <span className="text-slate-700 font-medium">
+                    <span className="text-muted-foreground font-medium">
                       {forKey(item.text)}
                     </span>
                   </li>
@@ -89,7 +89,7 @@ export function LandingSolution() {
           </Card>
 
           {/* What LeadIA Does NOT Do */}
-          <Card className="border-slate-200 bg-slate-50">
+          <Card className="border-border bg-muted">
             <CardHeader>
               <div className="flex items-center gap-3 mb-2">
                 <div className="h-10 w-10 rounded-full bg-primary/15 flex items-center justify-center text-slate-600">
@@ -104,12 +104,12 @@ export function LandingSolution() {
               </p>
             </CardHeader>
             <CardContent>
-              <div className="mb-6 p-4 bg-white rounded-lg border border-slate-200 shadow-sm">
-                <div className="flex items-center gap-2 text-slate-800 font-semibold mb-2">
+              <div className="mb-6 p-4 bg-card rounded-lg border border-border shadow-sm">
+                <div className="flex items-center gap-2 text-foreground font-semibold mb-2">
                   <ShieldCheck className="h-5 w-5 text-primary" />
                   <span>{forKey(TranslationKeys.scope_limits_safe)}</span>
                 </div>
-                <p className="text-sm text-slate-600">
+                <p className="text-sm text-muted-foreground">
                   {forKey(TranslationKeys.scope_limits_safe_desc)}
                 </p>
               </div>
@@ -120,7 +120,7 @@ export function LandingSolution() {
                     className="flex items-center gap-3 opacity-75"
                   >
                     <FileX className="h-5 w-5 text-slate-400 shrink-0" />
-                    <span className="text-slate-600 line-through decoration-slate-400">
+                    <span className="text-muted-foreground line-through decoration-muted-foreground/50">
                       {forKey(item.text)}
                     </span>
                   </li>
