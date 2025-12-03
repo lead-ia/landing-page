@@ -2,7 +2,6 @@ import { LandingHeader } from "./LandingHeader";
 import { LandingHero } from "./LandingHero";
 import { LandingProblem } from "./LandingProblem";
 import { LandingSolution } from "./LandingSolution";
-import { LandingScope } from "./LandingScope";
 import { LandingHowItWorks } from "./LandingHowItWorks";
 import { LandingTestimonials } from "./LandingTestimonials";
 import { LandingOffer } from "./LandingOffer";
@@ -16,7 +15,7 @@ export function LeadIALanding() {
             <LandingHero />
             <LandingProblem />
             <LandingSolution />
-            <LandingScope />
+            {/* <LandingScope /> */}
             <LandingHowItWorks />
             <LandingTestimonials />
             <LandingOffer />

@@ -1,5 +1,5 @@
 import { Badge } from "@/components/ui/badge";
-import { Clock, XCircle, UserCheck } from "lucide-react";
+import { Clock, XCircle, UserCheck, TrendingUp } from "lucide-react";
 import { useTranslations, TranslationKeys } from "@/context/LanguageContext";
 
 export function LandingProblem() {
@@ -41,9 +41,9 @@ export function LandingProblem() {
               {forKey(TranslationKeys.problem_badge)}
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
-              {forKey(TranslationKeys.problem_title_1)} <br />
+              A maioria dos consultórios perde pacientes <br />
               <span className="text-red-500">
-                {forKey(TranslationKeys.problem_title_2)}
+                antes mesmo da primeira consulta
               </span>
             </h2>
             <p className="text-lg text-primary mb-8">
@@ -65,7 +65,7 @@ export function LandingProblem() {
               </div>
               <div className="flex gap-4">
                 <div className="h-10 w-10 rounded-full bg-red-100 flex items-center justify-center text-red-600 shrink-0">
-                  <UserCheck className="h-5 w-5" />
+                  <TrendingUp className="h-5 w-5" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-slate-900 text-lg">

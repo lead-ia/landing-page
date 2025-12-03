@@ -1,9 +1,4 @@
-import {
-  createContext,
-  useContext,
-  useState,
-  type ReactNode,
-} from "react";
+import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
 
 export type Language = "en" | "pt";
 
@@ -182,16 +177,16 @@ const translations: Record<Language, Record<TranslationKeys, string>> = {
     [TranslationKeys.problem_title_1]: "You're Losing Patients",
     [TranslationKeys.problem_title_2]: "While You Sleep",
     [TranslationKeys.problem_description]:
-      "Did you know that more than 50% of patients try to book appointments outside of commercial hours?",
+      "More than 50% of appointments are attempted outside of business hours.",
     [TranslationKeys.problem_card_title]: "Missed Opportunity",
     [TranslationKeys.problem_card_desc]:
       '"I tried to book but got no reply. Found another doctor."',
     [TranslationKeys.problem_point_1_title]: "The 10-Minute Rule",
     [TranslationKeys.problem_point_1_desc]:
-      "If you take more than 10 minutes to reply, patients start looking for another doctor. Speed is critical.",
-    [TranslationKeys.problem_point_2_title]: "Overwhelmed Staff",
+      "If the response takes more than 10 minutes, 62% look for another doctor.",
+    [TranslationKeys.problem_point_2_title]: "Revenue Potential",
     [TranslationKeys.problem_point_2_desc]:
-      "Your current staff can't be available 24/7 without significant cost and burnout.",
+      "Your schedule could yield 20%–40% more — just with agility.",
     [TranslationKeys.problem_source]: "Source: Doctoralia, Salesforce Health",
 
     // Solution
@@ -350,16 +345,16 @@ const translations: Record<Language, Record<TranslationKeys, string>> = {
     [TranslationKeys.problem_title_1]: "Você Está Perdendo Pacientes",
     [TranslationKeys.problem_title_2]: "Enquanto Dorme",
     [TranslationKeys.problem_description]:
-      "Você sabia que mais de 50% dos pacientes tentam agendar consultas fora do horário comercial?",
+      "Mais de 50% dos agendamentos são tentados fora do horário comercial.",
     [TranslationKeys.problem_card_title]: "Oportunidade Perdida",
     [TranslationKeys.problem_card_desc]:
       '"Tentei marcar mas demorei a obter resposta. Achei outro médico."',
     [TranslationKeys.problem_point_1_title]: "A Regra dos 10 Minutos",
     [TranslationKeys.problem_point_1_desc]:
-      "Se você demora mais de 10 minutos para responder, pacientes procuram outro médico. Rapidez é crítica.",
-    [TranslationKeys.problem_point_2_title]: "Equipe Sobrecarregada",
+      "Se a resposta ultrapassa 10 minutos, 62% procuram outro médico.",
+    [TranslationKeys.problem_point_2_title]: "Potencial de Receita",
     [TranslationKeys.problem_point_2_desc]:
-      "Sua equipe atual não pode estar disponível 24/7 sem custo significativo e burnout.",
+      "Sua agenda poderia render 20%–40% mais — apenas com agilidade.",
     [TranslationKeys.problem_source]: "Fonte: Doctoralia, Salesforce Health",
 
     // Solution
@@ -504,6 +499,13 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   const t = (key: TranslationKeys): string => {
     return translations[currentLanguage][key] || key;
   };
+
+  useEffect(() => {
+    const browserLanguage = navigator.language.split("-")[0];
+    if (browserLanguage === "pt") {
+      setCurrentLanguage("pt");
+    }
+  }, []);
 
   return (
     <LanguageContext.Provider
