@@ -1,4 +1,10 @@
-import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+  type ReactNode,
+} from "react";
 
 export type Language = "en" | "pt";
 
@@ -97,6 +103,21 @@ export enum TranslationKeys {
   how_step_3_title = "how_step_3_title",
   how_step_3_desc = "how_step_3_desc",
 
+  // Target Audience
+  target_badge = "target_badge",
+  target_title = "target_title",
+  target_title_custom = "target_title_custom",
+  target_title_custom_gradient = "target_title_custom_gradient",
+  target_desc_1 = "target_desc_1",
+  target_desc_2 = "target_desc_2",
+  target_intro = "target_intro",
+  target_point_1_title = "target_point_1_title",
+  target_point_1_desc = "target_point_1_desc",
+  target_point_2_title = "target_point_2_title",
+  target_point_2_desc = "target_point_2_desc",
+  target_point_3_title = "target_point_3_title",
+  target_point_3_desc = "target_point_3_desc",
+
   // Testimonials
   testimonials_badge = "testimonials_badge",
   testimonials_title = "testimonials_title",
@@ -107,9 +128,6 @@ export enum TranslationKeys {
   testimonial_2_text = "testimonial_2_text",
   testimonial_2_author = "testimonial_2_author",
   testimonial_2_role = "testimonial_2_role",
-  testimonial_3_text = "testimonial_3_text",
-  testimonial_3_author = "testimonial_3_author",
-  testimonial_3_role = "testimonial_3_role",
 
   // Offer
   offer_badge = "offer_badge",
@@ -256,23 +274,41 @@ const translations: Record<Language, Record<TranslationKeys, string>> = {
     [TranslationKeys.how_step_3_desc]:
       "We activate it full-time. No installation, no complex configuration, no system change.",
 
+    // Target Audience
+    [TranslationKeys.target_badge]: "For Whom",
+    [TranslationKeys.target_title]:
+      "Made for practices that value excellence, time, and experience.",
+    [TranslationKeys.target_title_custom]: "Made for practices that value",
+    [TranslationKeys.target_title_custom_gradient]:
+      "excellence, time, and experience.",
+    [TranslationKeys.target_desc_1]:
+      "If you serve patients who value quality, privacy, and organization —",
+    [TranslationKeys.target_desc_2]: "LeadIA is for you.",
+    [TranslationKeys.target_intro]:
+      "LeadIA is the perfect solution if your patients:",
+    [TranslationKeys.target_point_1_title]: "Value their time",
+    [TranslationKeys.target_point_1_desc]:
+      "They expect quick responses and efficient scheduling without waiting on hold.",
+    [TranslationKeys.target_point_2_title]: "Appreciate Quality",
+    [TranslationKeys.target_point_2_desc]:
+      "They expect a seamless and high-quality service experience when scheduling appointments.",
+    [TranslationKeys.target_point_3_title]: "Demand Privacy",
+    [TranslationKeys.target_point_3_desc]:
+      "They appreciate professional, secure, and discreet communication handling.",
+
     // Testimonials
     [TranslationKeys.testimonials_badge]: "Testimonials",
     [TranslationKeys.testimonials_title]: "Trusted by Specialists",
     [TranslationKeys.testimonials_desc]:
       "See what your colleagues are saying about LeadIA.",
     [TranslationKeys.testimonial_1_text]:
-      "LeadIA has completely transformed my practice. My patients love the instant responses, and I love that I don't have to worry about missed appointments anymore. It captures the nuance of my instructions perfectly.",
-    [TranslationKeys.testimonial_1_author]: "Dr. Sarah Chen",
-    [TranslationKeys.testimonial_1_role]: "Endocrinologist",
+      "I never lost a patient due to a delayed response again. LeadIA completely changed the flow of my office.",
+    [TranslationKeys.testimonial_1_author]: "Dr. Geórgia Dorigon",
+    [TranslationKeys.testimonial_1_role]: "Endocrinologist — Beta User",
     [TranslationKeys.testimonial_2_text]:
-      "Empathy is crucial in my field. I was skeptical at first, but LeadIA's tone is incredibly human and supportive. It handles the initial triage with such care that my patients feel heard immediately.",
-    [TranslationKeys.testimonial_2_author]: "Dr. James Wilson",
-    [TranslationKeys.testimonial_2_role]: "Psychiatrist",
-    [TranslationKeys.testimonial_3_text]:
-      "The efficiency is unmatched. It handles scheduling, reminders, and basic questions so my staff can focus on in-clinic patient care. The Google Calendar integration is flawless.",
-    [TranslationKeys.testimonial_3_author]: "Dr. Maria Rodriguez",
-    [TranslationKeys.testimonial_3_role]: "Cardiologist",
+      "My returns were getting lost for months. With LeadIA, I increased my number of appointments by 67%. It's like having a perfect secretary — 24 hours.",
+    [TranslationKeys.testimonial_2_author]: "Dr. Carol Coutinho",
+    [TranslationKeys.testimonial_2_role]: "Psychiatrist — Beta User",
 
     // Offer
     [TranslationKeys.offer_badge]: "Exclusive Pre-launch Offer",
@@ -425,23 +461,42 @@ const translations: Record<Language, Record<TranslationKeys, string>> = {
     [TranslationKeys.how_step_3_desc]:
       "Ativamos em tempo integral. Sem instalação, sem configuração complexa, sem mudança de sistema.",
 
+    // Target Audience
+    [TranslationKeys.target_badge]: "Para quem é",
+    [TranslationKeys.target_title]:
+      "Feita para consultórios que valorizam excelência, tempo e experiência.",
+    [TranslationKeys.target_title_custom]:
+      "Feita para consultórios que valorizam",
+    [TranslationKeys.target_title_custom_gradient]:
+      "excelência, tempo e experiência.",
+    [TranslationKeys.target_desc_1]:
+      "Se você atende pacientes que valorizam qualidade, privacidade e organização —",
+    [TranslationKeys.target_desc_2]: "LeadIA é para você.",
+    [TranslationKeys.target_intro]:
+      "LeadIA é a solução perfeita se seus pacientes:",
+    [TranslationKeys.target_point_1_title]: "Valorizam seu tempo",
+    [TranslationKeys.target_point_1_desc]:
+      "Eles esperam respostas rápidas e agendamento eficiente sem esperar na linha.",
+    [TranslationKeys.target_point_2_title]: "Prezam pela Qualidade",
+    [TranslationKeys.target_point_2_desc]:
+      "Eles esperam uma experiência de atendimento impecável e de alta qualidade ao agendar.",
+    [TranslationKeys.target_point_3_title]: "Exigem Privacidade",
+    [TranslationKeys.target_point_3_desc]:
+      "Eles apreciam um tratamento profissional, seguro e discreto.",
+
     // Testimonials
     [TranslationKeys.testimonials_badge]: "Depoimentos",
     [TranslationKeys.testimonials_title]: "Confiado por Especialistas",
     [TranslationKeys.testimonials_desc]:
       "Veja o que seus colegas estão dizendo sobre a LeadIA.",
     [TranslationKeys.testimonial_1_text]:
-      "A LeadIA transformou completamente meu consultório. Meus pacientes adoram as respostas instantâneas, e eu adoro não ter que me preocupar com consultas perdidas. Ela captura a nuance das minhas instruções perfeitamente.",
-    [TranslationKeys.testimonial_1_author]: "Dra. Sarah Chen",
-    [TranslationKeys.testimonial_1_role]: "Endocrinologista",
+      "Nunca mais perdi um paciente por demora na resposta. A LeadIA mudou completamente o fluxo do meu consultório.",
+    [TranslationKeys.testimonial_1_author]: "Drª Geórgia Dorigon",
+    [TranslationKeys.testimonial_1_role]: "Endocrinologista — Usuária Beta",
     [TranslationKeys.testimonial_2_text]:
-      "Empatia é crucial na minha área. Eu estava cético no início, mas o tom da LeadIA é incrivelmente humano e solidário. Ela lida com a triagem inicial com tanto cuidado que meus pacientes se sentem ouvidos imediatamente.",
-    [TranslationKeys.testimonial_2_author]: "Dr. James Wilson",
-    [TranslationKeys.testimonial_2_role]: "Psiquiatra",
-    [TranslationKeys.testimonial_3_text]:
-      "A eficiência é inigualável. Ela lida com agendamento, lembretes e perguntas básicas para que minha equipe possa focar no atendimento ao paciente na clínica. A integração com o Google Agenda é impecável.",
-    [TranslationKeys.testimonial_3_author]: "Dra. Maria Rodriguez",
-    [TranslationKeys.testimonial_3_role]: "Cardiologista",
+      "Meus retornos estavam se perdendo há meses. Com a LeadIA, aumentei meu número de consultas em 67%. É como ter uma secretária perfeita — 24 horas.",
+    [TranslationKeys.testimonial_2_author]: "Drª Carol Coutinho",
+    [TranslationKeys.testimonial_2_role]: "Psiquiatra — Usuária Beta",
 
     // Offer
     [TranslationKeys.offer_badge]: "Oferta Exclusiva de Pré-lançamento",
