@@ -11,11 +11,13 @@ export function LandingTestimonials() {
       text: TranslationKeys.testimonial_1_text,
       author: TranslationKeys.testimonial_1_author,
       role: TranslationKeys.testimonial_1_role,
+      avatar: "/georgia.webp",
     },
     {
       text: TranslationKeys.testimonial_2_text,
       author: TranslationKeys.testimonial_2_author,
       role: TranslationKeys.testimonial_2_role,
+      avatar: "/carolina.webp",
     },
   ];
 
@@ -48,9 +50,11 @@ export function LandingTestimonials() {
                   "{forKey(item.text)}"
                 </p>
                 <div className="flex items-center gap-4 mt-auto border-t border-slate-100 pt-4">
-                  <div className="h-10 w-10 rounded-full bg-slate-200 flex items-center justify-center font-bold text-slate-500">
-                    {forKey(item.author).charAt(4)}
-                  </div>
+                  <img
+                    src={item.avatar}
+                    alt={forKey(item.author)}
+                    className="h-10 w-10 rounded-full object-cover"
+                  />
                   <div>
                     <p className="font-bold text-foreground text-sm">
                       {forKey(item.author)}
