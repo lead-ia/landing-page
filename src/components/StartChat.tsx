@@ -13,13 +13,12 @@ const ptMessage =
   "Olá! 👋 \n Estou interessado no LeadIA e gostaria de realizar um teste do serviço!";
 const enMessage =
   "Hello! 👋 \n I'm interested in LeadIA and would like to test the service!";
-
 export const StartChat = () => {
   const { currentLanguage } = useCurrentLanguage();
   const { forKey: t } = useTranslations();
   const message = currentLanguage === "pt" ? ptMessage : enMessage;
   const handleWhatsAppClick = () => {
-    const whatsappUrl = `https://wa.me/${leadiaPhoneNumber}?text=${encodeURIComponent(
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=${leadiaPhoneNumber}&text=${encodeURIComponent(
       message
     )}`;
 
