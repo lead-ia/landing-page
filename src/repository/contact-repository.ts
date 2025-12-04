@@ -32,7 +32,7 @@ export const contactRepository: ContactRepository = {
       const response = await fetch(basePath, {
         method: 'POST',
         headers: {
-          'x-app-secret': "bd06c285046f40d8bbc59cf21c16cc31",
+          'x-app-secret': import.meta.env.LEADIA_API_SECRET,
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
