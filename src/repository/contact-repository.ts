@@ -24,7 +24,7 @@ export const contactRepository: ContactRepository = {
     try {
       let basePath = 'https://workflow.leadia.com.br/webhook';
       if (isReferral) {
-        basePath += '/referral';
+        basePath += '/tonton';
       }
       else {
         basePath += '/register-lead';
@@ -44,8 +44,6 @@ export const contactRepository: ContactRepository = {
       });
 
       const result = await response.json();
-
-      console.log(result);
 
       if (result.status === 'success') {
         return true;
