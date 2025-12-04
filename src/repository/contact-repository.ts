@@ -32,7 +32,7 @@ export const contactRepository: ContactRepository = {
       const response = await fetch(basePath, {
         method: 'POST',
         headers: {
-          'x-app-secret': import.meta.env.LEADIA_API_SECRET,
+          'x-app-secret': import.meta.env.VITE_LEADIA_API_SECRET,
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
@@ -44,7 +44,6 @@ export const contactRepository: ContactRepository = {
       });
 
       const result = await response.json();
-      console.log(result);
 
       if (result.status === 'success') {
         return true;
