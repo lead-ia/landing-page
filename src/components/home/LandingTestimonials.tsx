@@ -20,7 +20,7 @@ export function LandingTestimonials() {
   ];
 
   return (
-    <section className="py-20 bg-card">
+    <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <Badge variant="outline" className="mb-4">

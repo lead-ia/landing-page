@@ -6,7 +6,7 @@ export function LandingProblem() {
   const { forKey } = useTranslations();
 
   return (
-    <section className="py-20 bg-card">
+    <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
           <div className="lg:w-1/2">
