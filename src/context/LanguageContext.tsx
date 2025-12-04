@@ -207,6 +207,7 @@ export enum TranslationKeys {
   contact_submit = "contact_submit",
   contact_error_specialty = "contact_error_specialty",
   contact_error_general = "contact_error_general",
+  contact_success = "contact_success",
 
   // Start Chat
   start_chat_message = "start_chat_message",
@@ -483,6 +484,8 @@ const translations: Record<Language, Record<TranslationKeys, string>> = {
     [TranslationKeys.contact_submit]: "Submit",
     [TranslationKeys.contact_error_specialty]: "Please select a specialty",
     [TranslationKeys.contact_error_general]: "Error sending contact form",
+    [TranslationKeys.contact_success]:
+      "Congratulations! You're already on the waiting list",
 
     // Start Chat
     [TranslationKeys.start_chat_message]:
@@ -767,6 +770,8 @@ const translations: Record<Language, Record<TranslationKeys, string>> = {
       "Por favor, selecione uma especialidade",
     [TranslationKeys.contact_error_general]:
       "Erro ao enviar formulário de contato",
+    [TranslationKeys.contact_success]:
+      "Parabéns! Você já está na lista de espera",
 
     // Start Chat
     [TranslationKeys.start_chat_message]:

@@ -77,7 +77,7 @@ export const ContactForm = () => {
     if (!contactResponse) return;
 
     if (contactResponse.success) {
-      navigate("/start-chat");
+      showSuccessToast();
     }
 
     if (contactResponse.error) {
@@ -87,6 +87,10 @@ export const ContactForm = () => {
 
   const showErrorToast = (message?: string) => {
     toast(message || t(TranslationKeys.contact_error_general));
+  };
+
+  const showSuccessToast = () => {
+    toast(t(TranslationKeys.contact_success));
   };
 
   return (
