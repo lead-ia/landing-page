@@ -391,11 +391,11 @@ const translations: Record<Language, Record<TranslationKeys, string>> = {
     [TranslationKeys.testimonial_1_text]:
       "I never lost a patient due to a delayed response again. LeadIA completely changed the flow of my office.",
     [TranslationKeys.testimonial_1_author]: "Dr. Geórgia Dorigon",
-    [TranslationKeys.testimonial_1_role]: "Endocrinologist — Beta User",
+    [TranslationKeys.testimonial_1_role]: "Endocrinologist",
     [TranslationKeys.testimonial_2_text]:
       "My returns were getting lost for months. With LeadIA, I increased my number of appointments by 67%. It's like having a perfect secretary — 24 hours.",
     [TranslationKeys.testimonial_2_author]: "Dr. Carol Coutinho",
-    [TranslationKeys.testimonial_2_role]: "Psychiatrist — Beta User",
+    [TranslationKeys.testimonial_2_role]: "Psychiatrist",
 
     // Offer
     [TranslationKeys.offer_badge]: "Exclusive Pre-launch Offer",
@@ -673,11 +673,11 @@ const translations: Record<Language, Record<TranslationKeys, string>> = {
     [TranslationKeys.testimonial_1_text]:
       "Nunca mais perdi um paciente por demora na resposta. A LeadIA mudou completamente o fluxo do meu consultório.",
     [TranslationKeys.testimonial_1_author]: "Drª Geórgia Dorigon",
-    [TranslationKeys.testimonial_1_role]: "Endocrinologista — Usuária Beta",
+    [TranslationKeys.testimonial_1_role]: "Endocrinologista",
     [TranslationKeys.testimonial_2_text]:
       "Meus retornos estavam se perdendo há meses. Com a LeadIA, aumentei meu número de consultas em 67%. É como ter uma secretária perfeita — 24 horas.",
     [TranslationKeys.testimonial_2_author]: "Drª Carol Coutinho",
-    [TranslationKeys.testimonial_2_role]: "Psiquiatra — Usuária Beta",
+    [TranslationKeys.testimonial_2_role]: "Psiquiatra",
 
     // Offer
     [TranslationKeys.offer_badge]: "Oferta Exclusiva de Pré-lançamento",
