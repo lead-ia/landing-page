@@ -12,7 +12,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { useNavigate } from "react-router-dom";
 import {
   useContactRepository,
   type ContactFormData,
@@ -31,7 +30,6 @@ export const ContactForm = () => {
     specialty: "",
   });
 
-  const navigate = useNavigate();
   const repository = useContactRepositoryProvider();
   const { sendContactData, contactResponse } = useContactRepository(repository);
   const [selectingOtherSpecialty, setSelectingOtherSpecialty] = useState(false);
