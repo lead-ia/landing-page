@@ -11,14 +11,22 @@ export function LandingFooter() {
             LeadIA — Secretária Virtual Inteligente para Médicos &copy;
             {new Date().getFullYear()}. {forKey(TranslationKeys.footer_rights)}
           </p>
-          <div className="flex gap-4 mt-4 md:mt-0">
-            <a href="#" className="hover:text-white">
+          {/* <div className="flex gap-4 mt-4 md:mt-0">
+            <Link
+              to="/terms"
+              onClick={() => navigate("/terms")}
+              className="hover:text-white"
+            >
               {forKey(TranslationKeys.footer_terms)}
-            </a>
-            <a href="#" className="hover:text-white">
+            </Link>
+            <Link
+              to="/privacy"
+              onClick={() => navigate("/privacy")}
+              className="hover:text-white"
+            >
               {forKey(TranslationKeys.footer_privacy)}
-            </a>
-          </div>
+            </Link>
+          </div> */}
         </div>
       </div>
     </footer>

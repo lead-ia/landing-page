@@ -159,6 +159,71 @@ export enum TranslationKeys {
   footer_rights = "footer_rights",
   footer_privacy = "footer_privacy",
   footer_terms = "footer_terms",
+
+  // Terms of Service
+  terms_title = "terms_title",
+  terms_intro = "terms_intro",
+  terms_section_1_title = "terms_section_1_title",
+  terms_section_1_content = "terms_section_1_content",
+  terms_section_2_title = "terms_section_2_title",
+  terms_section_2_content = "terms_section_2_content",
+  terms_section_3_title = "terms_section_3_title",
+  terms_section_3_content = "terms_section_3_content",
+  terms_section_4_title = "terms_section_4_title",
+  terms_section_4_content = "terms_section_4_content",
+  terms_section_5_title = "terms_section_5_title",
+  terms_section_5_content = "terms_section_5_content",
+
+  // Privacy Policy
+  privacy_title = "privacy_title",
+  privacy_intro = "privacy_intro",
+  privacy_section_1_title = "privacy_section_1_title",
+  privacy_section_1_content = "privacy_section_1_content",
+  privacy_section_2_title = "privacy_section_2_title",
+  privacy_section_2_content = "privacy_section_2_content",
+  privacy_section_3_title = "privacy_section_3_title",
+  privacy_section_3_content = "privacy_section_3_content",
+  privacy_section_4_title = "privacy_section_4_title",
+  privacy_section_4_content = "privacy_section_4_content",
+
+  // Contact Form
+  contact_title = "contact_title",
+  contact_description = "contact_description",
+  contact_name_label = "contact_name_label",
+  contact_name_placeholder = "contact_name_placeholder",
+  contact_email_label = "contact_email_label",
+  contact_email_placeholder = "contact_email_placeholder",
+  contact_phone_label = "contact_phone_label",
+  contact_phone_placeholder = "contact_phone_placeholder",
+  contact_submit = "contact_submit",
+  contact_error_specialty = "contact_error_specialty",
+  contact_error_general = "contact_error_general",
+
+  // Start Chat
+  start_chat_message = "start_chat_message",
+  start_chat_button = "start_chat_button",
+
+  // Select Specialty
+  specialty_label = "specialty_label",
+  specialty_placeholder = "specialty_placeholder",
+  specialty_other_label = "specialty_other_label",
+  specialty_other_placeholder = "specialty_other_placeholder",
+  specialty_anesthesiology = "specialty_anesthesiology",
+  specialty_cardiology = "specialty_cardiology",
+  specialty_dermatology = "specialty_dermatology",
+  specialty_emergency = "specialty_emergency",
+  specialty_family = "specialty_family",
+  specialty_gastroenterology = "specialty_gastroenterology",
+  specialty_internal = "specialty_internal",
+  specialty_neurology = "specialty_neurology",
+  specialty_obgyn = "specialty_obgyn",
+  specialty_oncology = "specialty_oncology",
+  specialty_orthopedic = "specialty_orthopedic",
+  specialty_pediatrics = "specialty_pediatrics",
+  specialty_psychiatry = "specialty_psychiatry",
+  specialty_radiology = "specialty_radiology",
+  specialty_surgery = "specialty_surgery",
+  specialty_other = "specialty_other",
 }
 
 const translations: Record<Language, Record<TranslationKeys, string>> = {
@@ -346,6 +411,84 @@ const translations: Record<Language, Record<TranslationKeys, string>> = {
     [TranslationKeys.footer_rights]: "All rights reserved.",
     [TranslationKeys.footer_privacy]: "Privacy",
     [TranslationKeys.footer_terms]: "Terms",
+
+    // Terms of Service
+    [TranslationKeys.terms_title]: "Terms of Service",
+    [TranslationKeys.terms_intro]:
+      "By accessing this website, you agree to be bound by these terms of service, all applicable laws and regulations, and agree that you are responsible for compliance with any applicable local laws.",
+    [TranslationKeys.terms_section_1_title]: "1. Use License",
+    [TranslationKeys.terms_section_1_content]:
+      "Permission is granted to temporarily download one copy of the materials (information or software) on LeadIA's website for personal, non-commercial transitory viewing only.",
+    [TranslationKeys.terms_section_2_title]: "2. Disclaimer",
+    [TranslationKeys.terms_section_2_content]:
+      "The materials on LeadIA's website are provided on an 'as is' basis. LeadIA makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.",
+    [TranslationKeys.terms_section_3_title]: "3. Limitations",
+    [TranslationKeys.terms_section_3_content]:
+      "In no event shall LeadIA or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on LeadIA's website.",
+    [TranslationKeys.terms_section_4_title]: "4. Accuracy of Materials",
+    [TranslationKeys.terms_section_4_content]:
+      "The materials appearing on LeadIA's website could include technical, typographical, or photographic errors. LeadIA does not warrant that any of the materials on its website are accurate, complete or current.",
+    [TranslationKeys.terms_section_5_title]: "5. Modifications",
+    [TranslationKeys.terms_section_5_content]:
+      "LeadIA may revise these terms of service for its website at any time without notice. By using this website you are agreeing to be bound by the then current version of these terms of service.",
+
+    // Privacy Policy
+    [TranslationKeys.privacy_title]: "Privacy Policy",
+    [TranslationKeys.privacy_intro]:
+      "Your privacy is important to us. It is LeadIA's policy to respect your privacy regarding any information we may collect from you across our website.",
+    [TranslationKeys.privacy_section_1_title]: "1. Information We Collect",
+    [TranslationKeys.privacy_section_1_content]:
+      "We only ask for personal information when we truly need it to provide a service to you. We collect it by fair and lawful means, with your knowledge and consent.",
+    [TranslationKeys.privacy_section_2_title]: "2. How We Use Information",
+    [TranslationKeys.privacy_section_2_content]:
+      "We use the collected information to provide, operate, and maintain our website, improve, personalize, and expand our website, and understand and analyze how you use our website.",
+    [TranslationKeys.privacy_section_3_title]: "3. Data Retention",
+    [TranslationKeys.privacy_section_3_content]:
+      "We only retain collected information for as long as necessary to provide you with your requested service. What data we store, we'll protect within commercially acceptable means to prevent loss and theft, as well as unauthorized access, disclosure, copying, use or modification.",
+    [TranslationKeys.privacy_section_4_title]: "4. Third Party Links",
+    [TranslationKeys.privacy_section_4_content]:
+      "Our website may link to external sites that are not operated by us. Please be aware that we have no control over the content and practices of these sites, and cannot accept responsibility or liability for their respective privacy policies.",
+
+    // Contact Form
+    [TranslationKeys.contact_title]: "Contact Information",
+    [TranslationKeys.contact_description]:
+      "Fill in your details and we'll get back to you",
+    [TranslationKeys.contact_name_label]: "Full Name",
+    [TranslationKeys.contact_name_placeholder]: "Enter your full name",
+    [TranslationKeys.contact_email_label]: "Email Address",
+    [TranslationKeys.contact_email_placeholder]: "Enter your email address",
+    [TranslationKeys.contact_phone_label]: "Phone Number",
+    [TranslationKeys.contact_phone_placeholder]: "Enter your phone number",
+    [TranslationKeys.contact_submit]: "Submit",
+    [TranslationKeys.contact_error_specialty]: "Please select a specialty",
+    [TranslationKeys.contact_error_general]: "Error sending contact form",
+
+    // Start Chat
+    [TranslationKeys.start_chat_message]:
+      "You've been registered for the LeadIA pre-launch. Start your test now!",
+    [TranslationKeys.start_chat_button]: "Chat with LeadIA",
+
+    // Select Specialty
+    [TranslationKeys.specialty_label]: "Doctor Specialty",
+    [TranslationKeys.specialty_placeholder]: "Select your specialty",
+    [TranslationKeys.specialty_other_label]: "Specify Your Specialty",
+    [TranslationKeys.specialty_other_placeholder]: "Enter your specialty",
+    [TranslationKeys.specialty_anesthesiology]: "Anesthesiology",
+    [TranslationKeys.specialty_cardiology]: "Cardiology",
+    [TranslationKeys.specialty_dermatology]: "Dermatology",
+    [TranslationKeys.specialty_emergency]: "Emergency Medicine",
+    [TranslationKeys.specialty_family]: "Family Medicine",
+    [TranslationKeys.specialty_gastroenterology]: "Gastroenterology",
+    [TranslationKeys.specialty_internal]: "Internal Medicine",
+    [TranslationKeys.specialty_neurology]: "Neurology",
+    [TranslationKeys.specialty_obgyn]: "Obstetrics and Gynecology",
+    [TranslationKeys.specialty_oncology]: "Oncology",
+    [TranslationKeys.specialty_orthopedic]: "Orthopedic Surgery",
+    [TranslationKeys.specialty_pediatrics]: "Pediatrics",
+    [TranslationKeys.specialty_psychiatry]: "Psychiatry",
+    [TranslationKeys.specialty_radiology]: "Radiology",
+    [TranslationKeys.specialty_surgery]: "Surgery",
+    [TranslationKeys.specialty_other]: "Other",
   },
   pt: {
     // Header
@@ -535,6 +678,87 @@ const translations: Record<Language, Record<TranslationKeys, string>> = {
     [TranslationKeys.footer_rights]: "Todos os direitos reservados.",
     [TranslationKeys.footer_privacy]: "Privacidade",
     [TranslationKeys.footer_terms]: "Termos",
+
+    // Terms of Service
+    [TranslationKeys.terms_title]: "Termos de Serviço",
+    [TranslationKeys.terms_intro]:
+      "Ao acessar este site, você concorda em cumprir estes termos de serviço, todas as leis e regulamentos aplicáveis ​​e concorda que é responsável pelo cumprimento de todas as leis locais aplicáveis.",
+    [TranslationKeys.terms_section_1_title]: "1. Licença de Uso",
+    [TranslationKeys.terms_section_1_content]:
+      "É concedida permissão para baixar temporariamente uma cópia dos materiais (informações ou software) no site da LeadIA, apenas para visualização transitória pessoal e não comercial.",
+    [TranslationKeys.terms_section_2_title]: "2. Isenção de Responsabilidade",
+    [TranslationKeys.terms_section_2_content]:
+      "Os materiais no site da LeadIA são fornecidos 'como estão'. A LeadIA não oferece garantias, expressas ou implícitas, e, por este meio, isenta e nega todas as outras garantias, incluindo, sem limitação, garantias implícitas ou condições de comercialização, adequação a um fim específico ou não violação de propriedade intelectual ou outra violação de direitos.",
+    [TranslationKeys.terms_section_3_title]: "3. Limitações",
+    [TranslationKeys.terms_section_3_content]:
+      "Em nenhum caso a LeadIA ou seus fornecedores serão responsáveis ​​por quaisquer danos (incluindo, sem limitação, danos por perda de dados ou lucro ou devido a interrupção dos negócios) decorrentes do uso ou da incapacidade de usar os materiais em LeadIA.",
+    [TranslationKeys.terms_section_4_title]: "4. Precisão dos Materiais",
+    [TranslationKeys.terms_section_4_content]:
+      "Os materiais exibidos no site da LeadIA podem incluir erros técnicos, tipográficos ou fotográficos. A LeadIA não garante que qualquer material em seu site seja preciso, completo ou atual.",
+    [TranslationKeys.terms_section_5_title]: "5. Modificações",
+    [TranslationKeys.terms_section_5_content]:
+      "A LeadIA pode revisar estes termos de serviço do site a qualquer momento, sem aviso prévio. Ao usar este site, você concorda em ficar vinculado à versão atual desses termos de serviço.",
+
+    // Privacy Policy
+    [TranslationKeys.privacy_title]: "Política de Privacidade",
+    [TranslationKeys.privacy_intro]:
+      "Sua privacidade é importante para nós. É política da LeadIA respeitar a sua privacidade em relação a qualquer informação que possamos coletar de você em nosso site.",
+    [TranslationKeys.privacy_section_1_title]: "1. Informações que Coletamos",
+    [TranslationKeys.privacy_section_1_content]:
+      "Solicitamos informações pessoais apenas quando realmente precisamos delas para lhe fornecer um serviço. Fazemo-lo por meios justos e legais, com o seu conhecimento e consentimento.",
+    [TranslationKeys.privacy_section_2_title]: "2. Como Usamos as Informações",
+    [TranslationKeys.privacy_section_2_content]:
+      "Usamos as informações coletadas para fornecer, operar e manter nosso site, melhorar, personalizar e expandir nosso site, e entender e analisar como você usa nosso site.",
+    [TranslationKeys.privacy_section_3_title]: "3. Retenção de Dados",
+    [TranslationKeys.privacy_section_3_content]:
+      "Apenas retemos as informações coletadas pelo tempo necessário para fornecer o serviço solicitado. Quando armazenamos dados, protegemos dentro de meios comercialmente aceitáveis ​​para evitar perdas e roubos, bem como acesso, divulgação, cópia, uso ou modificação não autorizados.",
+    [TranslationKeys.privacy_section_4_title]: "4. Links de Terceiros",
+    [TranslationKeys.privacy_section_4_content]:
+      "Nosso site pode ter links para sites externos que não são operados por nós. Esteja ciente de que não temos controle sobre o conteúdo e práticas desses sites e não podemos aceitar responsabilidade por suas respectivas políticas de privacidade.",
+
+    // Contact Form
+    [TranslationKeys.contact_title]: "Informações de Contato",
+    [TranslationKeys.contact_description]:
+      "Preencha seus dados e entraremos em contato",
+    [TranslationKeys.contact_name_label]: "Nome Completo",
+    [TranslationKeys.contact_name_placeholder]: "Digite seu nome completo",
+    [TranslationKeys.contact_email_label]: "Endereço de Email",
+    [TranslationKeys.contact_email_placeholder]: "Digite seu endereço de email",
+    [TranslationKeys.contact_phone_label]: "Número de Telefone",
+    [TranslationKeys.contact_phone_placeholder]:
+      "Digite seu número de telefone",
+    [TranslationKeys.contact_submit]: "Enviar",
+    [TranslationKeys.contact_error_specialty]:
+      "Por favor, selecione uma especialidade",
+    [TranslationKeys.contact_error_general]:
+      "Erro ao enviar formulário de contato",
+
+    // Start Chat
+    [TranslationKeys.start_chat_message]:
+      "Você foi cadastrado no pré-lançamento da LeadIA. Comece seu teste agora!",
+    [TranslationKeys.start_chat_button]: "Conversar com LeadIA",
+
+    // Select Specialty
+    [TranslationKeys.specialty_label]: "Especialidade Médica",
+    [TranslationKeys.specialty_placeholder]: "Selecione sua especialidade",
+    [TranslationKeys.specialty_other_label]: "Especifique Sua Especialidade",
+    [TranslationKeys.specialty_other_placeholder]: "Digite sua especialidade",
+    [TranslationKeys.specialty_anesthesiology]: "Anestesiologia",
+    [TranslationKeys.specialty_cardiology]: "Cardiologia",
+    [TranslationKeys.specialty_dermatology]: "Dermatologia",
+    [TranslationKeys.specialty_emergency]: "Medicina de Emergência",
+    [TranslationKeys.specialty_family]: "Medicina de Família",
+    [TranslationKeys.specialty_gastroenterology]: "Gastroenterologia",
+    [TranslationKeys.specialty_internal]: "Medicina Interna",
+    [TranslationKeys.specialty_neurology]: "Neurologia",
+    [TranslationKeys.specialty_obgyn]: "Obstetrícia e Ginecologia",
+    [TranslationKeys.specialty_oncology]: "Oncologia",
+    [TranslationKeys.specialty_orthopedic]: "Cirurgia Ortopédica",
+    [TranslationKeys.specialty_pediatrics]: "Pediatria",
+    [TranslationKeys.specialty_psychiatry]: "Psiquiatria",
+    [TranslationKeys.specialty_radiology]: "Radiologia",
+    [TranslationKeys.specialty_surgery]: "Cirurgia",
+    [TranslationKeys.specialty_other]: "Outra",
   },
 };
 

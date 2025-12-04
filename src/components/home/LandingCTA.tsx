@@ -21,7 +21,7 @@ export function LandingCTA() {
                     {forKey(TranslationKeys.cta_desc)}
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    <Button size="lg" onClick={handleCtaClick}>
+                    <Button size="lg" onClick={handleCtaClick} className="lg:text-lg font-bold w-full md:w-auto py-8">
                         {forKey(TranslationKeys.cta_button)}
                         <ArrowRight />
                     </Button>

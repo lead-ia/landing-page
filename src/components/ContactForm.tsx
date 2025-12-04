@@ -19,8 +19,10 @@ import {
 } from "@/repository/contact-repository";
 import { useContactRepositoryProvider } from "@/context/ContactRepositoryContext";
 import SelectSpecialtyButton from "./SelectSpecialtyButton";
+import { useTranslations, TranslationKeys } from "@/context/LanguageContext";
 
 export const ContactForm = () => {
+  const { forKey: t } = useTranslations();
   const [formData, setFormData] = useState<ContactFormData>({
     name: "",
     email: "",
@@ -46,7 +48,7 @@ export const ContactForm = () => {
     e.preventDefault();
 
     if (formData.specialty?.length == 0) {
-      showErrorToast("Please select a specialty");
+      showErrorToast(t(TranslationKeys.contact_error_specialty));
       return;
     }
 
@@ -84,27 +86,29 @@ export const ContactForm = () => {
   }, [contactResponse]);
 
   const showErrorToast = (message?: string) => {
-    toast(message || "Error sending contact form");
+    toast(message || t(TranslationKeys.contact_error_general));
   };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
       <Card className="w-full max-w-md">
         <CardHeader className="text-center">
-          <CardTitle>Contact Information</CardTitle>
+          <CardTitle>{t(TranslationKeys.contact_title)}</CardTitle>
           <CardDescription>
-            Fill in your details and we'll get back to you
+            {t(TranslationKeys.contact_description)}
           </CardDescription>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="space-y-2">
-              <Label htmlFor="name">Full Name</Label>
+              <Label htmlFor="name">
+                {t(TranslationKeys.contact_name_label)}
+              </Label>
               <Input
                 id="name"
                 name="name"
                 type="text"
-                placeholder="Enter your full name"
+                placeholder={t(TranslationKeys.contact_name_placeholder)}
                 value={formData.name}
                 onChange={handleChange}
                 required
@@ -112,12 +116,14 @@ export const ContactForm = () => {
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="email">Email Address</Label>
+              <Label htmlFor="email">
+                {t(TranslationKeys.contact_email_label)}
+              </Label>
               <Input
                 id="email"
                 name="email"
                 type="email"
-                placeholder="Enter your email address"
+                placeholder={t(TranslationKeys.contact_email_placeholder)}
                 value={formData.email}
                 onChange={handleChange}
                 required
@@ -125,11 +131,13 @@ export const ContactForm = () => {
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="phone">Phone Number</Label>
+              <Label htmlFor="phone">
+                {t(TranslationKeys.contact_phone_label)}
+              </Label>
               <PhoneInput
                 id="phone"
                 name="phone"
-                placeholder="Enter your phone number"
+                placeholder={t(TranslationKeys.contact_phone_placeholder)}
                 value={formData.phone}
                 onChange={handlePhoneChange}
                 required
@@ -151,10 +159,10 @@ export const ContactForm = () => {
               {contactResponse.loading ? (
                 <>
                   <Spinner />
-                  Submit
+                  {t(TranslationKeys.contact_submit)}
                 </>
               ) : (
-                <>Submit</>
+                <>{t(TranslationKeys.contact_submit)}</>
               )}
             </Button>
           </form>

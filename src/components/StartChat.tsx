@@ -1,9 +1,10 @@
 import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import {
-  Card,
-  CardContent,
-} from "@/components/ui/card";
-import { useCurrentLanguage } from "@/context/LanguageContext";
+  useCurrentLanguage,
+  useTranslations,
+  TranslationKeys,
+} from "@/context/LanguageContext";
 import { MessageCircle } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 
@@ -15,6 +16,7 @@ const enMessage =
 
 export const StartChat = () => {
   const { currentLanguage } = useCurrentLanguage();
+  const { forKey: t } = useTranslations();
   const message = currentLanguage === "pt" ? ptMessage : enMessage;
   const handleWhatsAppClick = () => {
     const whatsappUrl = `https://wa.me/${leadiaPhoneNumber}?text=${encodeURIComponent(
@@ -32,13 +34,12 @@ export const StartChat = () => {
             <FaWhatsapp className="h-12 w-12 text-green-600" />
           </div>
           <p className="font-medium text-center text-sm">
-            Você foi cadastrado no pré-lançamento da Leadia. Comece seu teste
-            agora!
+            {t(TranslationKeys.start_chat_message)}
           </p>
 
           <Button onClick={handleWhatsAppClick}>
             <MessageCircle />
-            Conversar com Leadia
+            {t(TranslationKeys.start_chat_button)}
           </Button>
         </CardContent>
       </Card>

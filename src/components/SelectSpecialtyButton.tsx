@@ -8,24 +8,25 @@ import {
 } from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
 import type { ContactFormData } from "@/repository/contact-repository";
+import { useTranslations, TranslationKeys } from "@/context/LanguageContext";
 
 const doctorSpecialties = [
-  "Anesthesiology",
-  "Cardiology",
-  "Dermatology",
-  "Emergency Medicine",
-  "Family Medicine",
-  "Gastroenterology",
-  "Internal Medicine",
-  "Neurology",
-  "Obstetrics and Gynecology",
-  "Oncology",
-  "Orthopedic Surgery",
-  "Pediatrics",
-  "Psychiatry",
-  "Radiology",
-  "Surgery",
-  "Other",
+  TranslationKeys.specialty_anesthesiology,
+  TranslationKeys.specialty_cardiology,
+  TranslationKeys.specialty_dermatology,
+  TranslationKeys.specialty_emergency,
+  TranslationKeys.specialty_family,
+  TranslationKeys.specialty_gastroenterology,
+  TranslationKeys.specialty_internal,
+  TranslationKeys.specialty_neurology,
+  TranslationKeys.specialty_obgyn,
+  TranslationKeys.specialty_oncology,
+  TranslationKeys.specialty_orthopedic,
+  TranslationKeys.specialty_pediatrics,
+  TranslationKeys.specialty_psychiatry,
+  TranslationKeys.specialty_radiology,
+  TranslationKeys.specialty_surgery,
+  TranslationKeys.specialty_other,
 ];
 
 function SelectSpecialtyButton(props: {
@@ -34,8 +35,10 @@ function SelectSpecialtyButton(props: {
   onSelectOtherSpecialty: (selectingOther: boolean) => void;
   onSpecialtyChange: (specialty: string) => void;
 }) {
+  const { forKey: t } = useTranslations();
+
   function handleSpecialtyChange(value: string) {
-    const selectedOther = value === "Other";
+    const selectedOther = value === t(TranslationKeys.specialty_other);
     if (selectedOther) {
       props.onSpecialtyChange("");
       props.onSelectOtherSpecialty(true);
@@ -53,36 +56,43 @@ function SelectSpecialtyButton(props: {
   return (
     <>
       <div className="space-y-2 w-full">
-        <Label htmlFor="specialty">Doctor Specialty</Label>
+        <Label htmlFor="specialty">{t(TranslationKeys.specialty_label)}</Label>
         <Select
           value={
             props.selectingOtherSpecialty
-              ? "Other"
+              ? t(TranslationKeys.specialty_other)
               : props.contactFormData.specialty
           }
           onValueChange={handleSpecialtyChange}
           required
         >
           <SelectTrigger id="specialty" className="w-full">
-            <SelectValue placeholder="Select your specialty" />
+            <SelectValue
+              placeholder={t(TranslationKeys.specialty_placeholder)}
+            />
           </SelectTrigger>
           <SelectContent>
-            {doctorSpecialties.map((specialty) => (
-              <SelectItem key={specialty} value={specialty}>
-                {specialty}
-              </SelectItem>
-            ))}
+            {doctorSpecialties.map((specialtyKey) => {
+              const translatedValue = t(specialtyKey);
+              return (
+                <SelectItem key={specialtyKey} value={translatedValue}>
+                  {translatedValue}
+                </SelectItem>
+              );
+            })}
           </SelectContent>
         </Select>
       </div>
       {props.selectingOtherSpecialty && (
         <div className="space-y-2">
-          <Label htmlFor="otherSpecialty">Specify Your Specialty</Label>
+          <Label htmlFor="otherSpecialty">
+            {t(TranslationKeys.specialty_other_label)}
+          </Label>
           <Input
             id="otherSpecialty"
             name="otherSpecialty"
             type="text"
-            placeholder="Enter your specialty"
+            placeholder={t(TranslationKeys.specialty_other_placeholder)}
             value={props.contactFormData.specialty}
             onChange={handleOtherSpecialtyChange}
             required

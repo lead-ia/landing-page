@@ -80,16 +80,16 @@ export function LandingHero() {
         </div>
       </div>
 
-      <div className="flex flex-col gap-4 justify-center items-center mt-8">
-        <h1 className="text-2xl md:text-4xl text-center font-extrabold tracking-tight text-foreground mb-6 leading-tight">
+      <div className="flex flex-col gap-4 justify-center items-center mt-8 p-4">
+        <h1 className="text-2xl md:text-4xl text-center font-extrabold tracking-tight text-foreground mb-2 leading-tight">
           Garanta acessso antecipado ao <br className="hidden md:block" />
           <span className="bg-gradient-to-r bg-clip-text text-transparent from-[#91ebfb] to-primary">
             pré-lançamento
           </span>
         </h1>
 
-        <Button size="lg" onClick={handleCtaClick}>
-          <Rocket /> Quero entrar para o pré-lançamento
+        <Button size="lg" onClick={handleCtaClick} className="lg:text-lg font-bold w-full md:w-auto py-8">
+          <Rocket size="lg" /> Quero entrar para o pré-lançamento
         </Button>
       </div>
 
