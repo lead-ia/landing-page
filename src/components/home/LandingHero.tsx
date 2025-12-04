@@ -23,16 +23,14 @@ export function LandingHero() {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center max-w-4xl mx-auto mb-12">
           <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-foreground mb-6 leading-tight">
-            LeadIA — Sua secretária inteligente, humanizada e disponível 24h{" "}
+            {forKey(TranslationKeys.hero_main_title_1)}{" "}
             <br className="hidden md:block" />
             <span className="bg-gradient-to-r bg-clip-text text-transparent from-[#91ebfb] to-primary">
-              Feita por Médicos, para Médicos
+              {forKey(TranslationKeys.hero_main_title_2)}
             </span>
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-            A secretária virtual realmente humanizada que eleva o padrão do seu
-            consultório. Criada por médicos e desenvolvida para médicos que não
-            podem perder pacientes, tempo ou receita.
+            {forKey(TranslationKeys.hero_main_description)}
           </p>
         </div>
 
@@ -82,14 +80,19 @@ export function LandingHero() {
 
       <div className="flex flex-col gap-4 justify-center items-center mt-8 p-4">
         <h1 className="text-2xl md:text-4xl text-center font-extrabold tracking-tight text-foreground mb-2 leading-tight">
-          Garanta acessso antecipado ao <br className="hidden md:block" />
+          {forKey(TranslationKeys.hero_prelaunch_title_1)}{" "}
+          <br className="hidden md:block" />
           <span className="bg-gradient-to-r bg-clip-text text-transparent from-[#91ebfb] to-primary">
-            pré-lançamento
+            {forKey(TranslationKeys.hero_prelaunch_title_2)}
           </span>
         </h1>
 
-        <Button size="lg" onClick={handleCtaClick} className="lg:text-lg font-bold w-full md:w-auto py-8">
-          <Rocket size="lg" /> Quero entrar para o pré-lançamento
+        <Button
+          size="lg"
+          onClick={handleCtaClick}
+          className="lg:text-lg font-bold w-full md:w-auto py-8"
+        >
+          <Rocket /> {forKey(TranslationKeys.hero_prelaunch_button)}
         </Button>
       </div>
 

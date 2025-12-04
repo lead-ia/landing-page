@@ -17,6 +17,12 @@ export enum TranslationKeys {
 
   // Hero
   hero_badge = "hero_badge",
+  hero_main_title_1 = "hero_main_title_1",
+  hero_main_title_2 = "hero_main_title_2",
+  hero_main_description = "hero_main_description",
+  hero_prelaunch_title_1 = "hero_prelaunch_title_1",
+  hero_prelaunch_title_2 = "hero_prelaunch_title_2",
+  hero_prelaunch_button = "hero_prelaunch_button",
   hero_title_1 = "hero_title_1",
   hero_title_2 = "hero_title_2",
   hero_description = "hero_description",
@@ -33,6 +39,8 @@ export enum TranslationKeys {
 
   // Problem
   problem_badge = "problem_badge",
+  problem_main_title_1 = "problem_main_title_1",
+  problem_main_title_2 = "problem_main_title_2",
   problem_title_1 = "problem_title_1",
   problem_title_2 = "problem_title_2",
   problem_description = "problem_description",
@@ -48,6 +56,7 @@ export enum TranslationKeys {
   solution_badge = "solution_badge",
   solution_title_1 = "solution_title_1",
   solution_title_2 = "solution_title_2",
+  solution_main_description = "solution_main_description",
   solution_description = "solution_description",
   solution_vs_title = "solution_vs_title",
   solution_traditional_title = "solution_traditional_title",
@@ -236,6 +245,14 @@ const translations: Record<Language, Record<TranslationKeys, string>> = {
 
     // Hero
     [TranslationKeys.hero_badge]: "Your Smart Secretary",
+    [TranslationKeys.hero_main_title_1]:
+      "LeadIA — Your intelligent, humanized secretary available 24/7",
+    [TranslationKeys.hero_main_title_2]: "Made by Doctors, for Doctors",
+    [TranslationKeys.hero_main_description]:
+      "The truly humanized virtual secretary that elevates your practice's standard. Created by doctors and developed for doctors who cannot afford to lose patients, time, or revenue.",
+    [TranslationKeys.hero_prelaunch_title_1]: "Secure early access to the",
+    [TranslationKeys.hero_prelaunch_title_2]: "pre-launch",
+    [TranslationKeys.hero_prelaunch_button]: "Join the Pre-Launch",
     [TranslationKeys.hero_title_1]: "The Human-Like Secretary",
     [TranslationKeys.hero_title_2]: "For Modern Doctors",
     [TranslationKeys.hero_description]:
@@ -257,6 +274,8 @@ const translations: Record<Language, Record<TranslationKeys, string>> = {
 
     // Problem
     [TranslationKeys.problem_badge]: "The Problem",
+    [TranslationKeys.problem_main_title_1]: "Most practices lose patients",
+    [TranslationKeys.problem_main_title_2]: "before the first appointment",
     [TranslationKeys.problem_title_1]: "You're Losing Patients",
     [TranslationKeys.problem_title_2]: "While You Sleep",
     [TranslationKeys.problem_description]:
@@ -276,6 +295,8 @@ const translations: Record<Language, Record<TranslationKeys, string>> = {
     [TranslationKeys.solution_badge]: "The Solution",
     [TranslationKeys.solution_title_1]: "LeadIA Takes Care of Patients",
     [TranslationKeys.solution_title_2]: "While You Focus on Care",
+    [TranslationKeys.solution_main_description]:
+      "LeadIA — The secretary that never fails. Never delays. Never forgets. It does what a secretary would do — just with absolute consistency. And the way you would: following your standard process, your communication, and your practice culture.",
     [TranslationKeys.solution_description]:
       "LeadIA does everything a secretary should do, but faster, cheaper, and without ever taking a break.",
     [TranslationKeys.solution_vs_title]: "Why LeadIA Wins",
@@ -499,6 +520,15 @@ const translations: Record<Language, Record<TranslationKeys, string>> = {
 
     // Hero
     [TranslationKeys.hero_badge]: "Sua Secretária Inteligente",
+    [TranslationKeys.hero_main_title_1]:
+      "LeadIA — Sua secretária inteligente, humanizada e disponível 24h",
+    [TranslationKeys.hero_main_title_2]: "Feita por Médicos, para Médicos",
+    [TranslationKeys.hero_main_description]:
+      "A secretária virtual realmente humanizada que eleva o padrão do seu consultório. Criada por médicos e desenvolvida para médicos que não podem perder pacientes, tempo ou receita.",
+    [TranslationKeys.hero_prelaunch_title_1]: "Garanta acesso antecipado ao",
+    [TranslationKeys.hero_prelaunch_title_2]: "pré-lançamento",
+    [TranslationKeys.hero_prelaunch_button]:
+      "Quero entrar para o pré-lançamento",
     [TranslationKeys.hero_title_1]: "A Secretária Humanizada",
     [TranslationKeys.hero_title_2]:
       "Para Médicos que estão cansados de deixar dinheiro na mesa",
@@ -521,6 +551,9 @@ const translations: Record<Language, Record<TranslationKeys, string>> = {
 
     // Problem
     [TranslationKeys.problem_badge]: "O Problema",
+    [TranslationKeys.problem_main_title_1]:
+      "A maioria dos consultórios perde pacientes",
+    [TranslationKeys.problem_main_title_2]: "antes mesmo da primeira consulta",
     [TranslationKeys.problem_title_1]: "Você Está Perdendo Pacientes",
     [TranslationKeys.problem_title_2]: "Enquanto Dorme",
     [TranslationKeys.problem_description]:
@@ -541,6 +574,8 @@ const translations: Record<Language, Record<TranslationKeys, string>> = {
     [TranslationKeys.solution_title_1]: "LeadIA cuida da sua agenda",
     [TranslationKeys.solution_title_2]:
       "enquanto você foca no cuidado dos seus pacientes",
+    [TranslationKeys.solution_main_description]:
+      "LeadIA — A secretária que nunca falha. Nunca atrasa. Nunca esquece. Ela executa o que uma secretária faria — só que com consistência absoluta. E da maneira que você faria: seguindo seu processo padrão, sua comunicação e sua cultura de consultório.",
     [TranslationKeys.solution_description]:
       "LeadIA faz tudo que uma secretária deve fazer, mas mais rápido, mais barato e sem nunca fazer pausa.",
     [TranslationKeys.solution_vs_title]: "Por que LeadIA Vence",

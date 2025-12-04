@@ -40,9 +40,9 @@ export function LandingProblem() {
               {forKey(TranslationKeys.problem_badge)}
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              A maioria dos consultórios perde pacientes <br />
+              {forKey(TranslationKeys.problem_main_title_1)} <br />
               <span className="text-red-500">
-                antes mesmo da primeira consulta
+                {forKey(TranslationKeys.problem_main_title_2)}
               </span>
             </h2>
             <p className="text-lg text-foreground mb-8">

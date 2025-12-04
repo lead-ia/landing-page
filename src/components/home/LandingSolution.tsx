@@ -51,10 +51,7 @@ export function LandingSolution() {
             </span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            LeadIA — A secretária que nunca falha. Nunca atrasa. Nunca esquece.
-            Ela executa o que uma secretária faria — só que com consistência
-            absoluta.E da maneira que você faria: seguindo seu processo padrão,
-            sua comunicação e sua cultura de consultório
+            {forKey(TranslationKeys.solution_main_description)}
           </p>
         </div>
 
