@@ -234,6 +234,10 @@ export enum TranslationKeys {
   specialty_radiology = "specialty_radiology",
   specialty_surgery = "specialty_surgery",
   specialty_other = "specialty_other",
+
+  // Waiting List
+  waiting_list_title = "waiting_list_title",
+  waiting_list_description = "waiting_list_description",
 }
 
 const translations: Record<Language, Record<TranslationKeys, string>> = {
@@ -513,6 +517,12 @@ const translations: Record<Language, Record<TranslationKeys, string>> = {
     [TranslationKeys.specialty_radiology]: "Radiology",
     [TranslationKeys.specialty_surgery]: "Surgery",
     [TranslationKeys.specialty_other]: "Other",
+
+    // Waiting List
+    [TranslationKeys.waiting_list_title]:
+      "Congratulations! You're on the waiting list",
+    [TranslationKeys.waiting_list_description]:
+      "You've just taken a major step toward modernizing your practice. LeadIA is designed to give you back your time while ensuring your patients receive the immediate attention they deserve. We'll be in touch soon.",
   },
   pt: {
     // Header
@@ -798,7 +808,13 @@ const translations: Record<Language, Record<TranslationKeys, string>> = {
     [TranslationKeys.specialty_psychiatry]: "Psiquiatria",
     [TranslationKeys.specialty_radiology]: "Radiologia",
     [TranslationKeys.specialty_surgery]: "Cirurgia",
-    [TranslationKeys.specialty_other]: "Outra",
+    [TranslationKeys.specialty_other]: "Outro",
+
+    // Waiting List
+    [TranslationKeys.waiting_list_title]:
+      "Parabéns! Você está na lista de espera",
+    [TranslationKeys.waiting_list_description]:
+      "Você acaba de dar um grande passo para modernizar seu consultório. A LeadIA foi projetada para devolver seu tempo enquanto garante que seus pacientes recebam a atenção imediata que merecem. Entraremos em contato em breve.",
   },
 };
 

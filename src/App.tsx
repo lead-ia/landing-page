@@ -6,6 +6,7 @@ import {
   useLocation,
 } from "react-router-dom";
 import { ContactForm } from "./components/ContactForm";
+import { WaitingList } from "./components/WaitingList";
 import { StartChat } from "./components/StartChat";
 import { ContactRepositoryProvider } from "./context/ContactRepositoryContext";
 import { LeadIALanding } from "./components/home/LeadIALanding";
@@ -35,6 +36,7 @@ function AppRoutes() {
             </ContactRepositoryProvider>
           }
         />
+        <Route path="/waiting-list" element={<WaitingList />} />
         <Route path="/start-chat" element={<StartChat />} />
       </Routes>
     </div>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Spinner } from "@/components/ui/spinner";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
@@ -21,6 +22,7 @@ import SelectSpecialtyButton from "./SelectSpecialtyButton";
 import { useTranslations, TranslationKeys } from "@/context/LanguageContext";
 
 export const ContactForm = () => {
+  const navigate = useNavigate();
   const { forKey: t } = useTranslations();
   const [formData, setFormData] = useState<ContactFormData>({
     name: "",
@@ -75,7 +77,7 @@ export const ContactForm = () => {
     if (!contactResponse) return;
 
     if (contactResponse.success) {
-      showSuccessToast();
+      navigate("/waiting-list", { replace: true });
     }
 
     if (contactResponse.error) {
@@ -87,12 +89,8 @@ export const ContactForm = () => {
     toast(message || t(TranslationKeys.contact_error_general));
   };
 
-  const showSuccessToast = () => {
-    toast(t(TranslationKeys.contact_success));
-  };
-
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen flex items-center justify-center bg-background py-12 px-4 sm:px-6 lg:px-8">
       <Card className="w-full max-w-md">
         <CardHeader className="text-center">
           <CardTitle>{t(TranslationKeys.contact_title)}</CardTitle>
