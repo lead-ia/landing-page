@@ -11,27 +11,27 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { ModeToggle } from "@/components/mode-toggle";
+import { useTheme } from "../theme-provider";
 
 export function LandingHeader() {
   const { forKey } = useTranslations();
+  const { theme } = useTheme();
   const { currentLanguage, setLanguage } = useCurrentLanguage();
+  const imgName = theme === "dark" ? "dark_logo.png" : "light_logo.png";
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur-md supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-        <div className="flex items-center gap-2">
+        <div className="overflow-hidden h-16 flex items-center">
           <img
-            src="/logo/leadia-logo.png"
+            src={imgName}
             alt="LeadIA Logo"
-            className="h-8 w-auto object-contain"
+            className="h-12 w-auto object-contain"
             onError={(e) => {
               e.currentTarget.style.display = "none";
               e.currentTarget.nextElementSibling?.classList.remove("hidden");
             }}
           />
-          <span className="text-xl font-bold text-foreground hidden">
-            LeadIA
-          </span>
         </div>
         <div className="flex items-center gap-4">
           <ModeToggle />
